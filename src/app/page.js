@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LanguageProvider, useLanguage } from "../context/LanguageContext";
 import Navbar from "../components/Navbar";
 import HierarchyDiagram from "../components/HierarchyDiagram";
+import Footer from "../components/Footer";
 
 function HomeContent() {
   const { language, t } = useLanguage();
@@ -209,6 +210,7 @@ function HomeContent() {
           <div style={{ color: "var(--color-primary)", fontSize: "20px" }}>←</div>
         </Link>
       </section>
+      <Footer />
     </div>
   );
 }

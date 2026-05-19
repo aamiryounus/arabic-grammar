@@ -3,6 +3,7 @@
 import { LanguageProvider, useLanguage } from "../../../context/LanguageContext";
 import Navbar from "../../../components/Navbar";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 const lessonContent = {
   en: {
@@ -513,6 +514,7 @@ function LessonContent() {
         </div>
 
       </div>
+      <Footer />
     </div>
   );
 }

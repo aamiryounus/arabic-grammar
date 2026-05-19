@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { LanguageProvider, useLanguage } from "../../context/LanguageContext";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const syllabusData = {
   en: {
@@ -464,6 +465,7 @@ function SyllabusContent() {
         </div>
 
       </div>
+      <Footer />
     </div>
   );
 }
