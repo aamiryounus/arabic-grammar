@@ -15,14 +15,15 @@ function HomeContent() {
       <Navbar />
 
       {/* Hero Section */}
-      <section
-        style={{
-          textAlign: "center",
-          padding: "80px 2rem 60px",
-          maxWidth: "800px",
-          margin: "0 auto",
-        }}
-      >
+    <section
+  className="animate-fadeInUp"
+  style={{
+    textAlign: "center",
+    padding: "80px 2rem 60px",
+    maxWidth: "800px",
+    margin: "0 auto",
+  }}
+>
         <div
           className="arabic"
           style={{
@@ -163,6 +164,7 @@ function HomeContent() {
         {/* Lesson 1 Card */}
         <Link
           href="/lessons/1"
+           className="card-hover"
           style={{
             backgroundColor: "var(--color-surface)",
             border: "1px solid var(--color-border)",
@@ -213,6 +215,7 @@ function HomeContent() {
         {/* Lesson 2 Card */}
         <Link
           href="/lessons/2"
+           className="card-hover"
           style={{
             backgroundColor: "var(--color-surface)",
             border: "1px solid var(--color-border)",

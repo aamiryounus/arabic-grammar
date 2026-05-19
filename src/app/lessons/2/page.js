@@ -483,7 +483,7 @@ function LessonContent() {
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
       <Navbar />
 
-      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
+      <div className="animate-fadeInUp" style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
 
         {/* Breadcrumb */}
         <div style={{ marginBottom: "24px", fontSize: "14px", color: "var(--color-text-muted)" }}>

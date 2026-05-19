@@ -166,8 +166,8 @@ function WordTag({ word, type, meaning, color, border, text }) {
         }}
       >
         <div
-          className="arabic"
-          style={{ fontSize: "22px", color: text, marginBottom: "4px" }}
+         className="quran-arabic"
+style={{ marginBottom: "12px" }}
         >
           {word}
         </div>
@@ -198,7 +198,7 @@ function LessonContent() {
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
       <Navbar />
 
-      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
+      <div className="animate-fadeInUp" style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
 
         {/* Breadcrumb */}
         <div style={{ marginBottom: "24px", fontSize: "14px", color: "var(--color-text-muted)" }}>
@@ -232,8 +232,8 @@ function LessonContent() {
             {c.title}
           </h1>
           <div
-            className="arabic"
-            style={{ fontSize: "22px", color: "var(--color-primary)", marginBottom: "20px" }}
+            className="quran-arabic"
+style={{ marginBottom: "12px" }}
           >
             {c.arabicTitle}
           </div>
@@ -302,8 +302,8 @@ function LessonContent() {
                 }}
               >
                 <div
-                  className="arabic"
-                  style={{ fontSize: "32px", color: part.text, minWidth: "60px", textAlign: "center" }}
+                  className="quran-arabic"
+style={{ marginBottom: "12px" }}
                 >
                   {part.term}
                 </div>
@@ -341,19 +341,13 @@ function LessonContent() {
           </h2>
 
           {/* Arabic Verse */}
-          <div
-            style={{
-              background: "linear-gradient(135deg, #0a1628, #0d1f3c)",
-              border: "1px solid #378add",
-              borderRadius: "10px",
-              padding: "24px",
-              textAlign: "center",
-              marginBottom: "20px",
-            }}
-          >
+         <div
+  className="quran-verse"
+  style={{ marginBottom: "20px" }}
+>
             <div
-              className="arabic"
-              style={{ fontSize: "28px", color: "#b5d4f4", lineHeight: "2", marginBottom: "12px" }}
+              className="quran-arabic"
+style={{ marginBottom: "12px" }}
             >
               {c.example1Arabic}
             </div>
@@ -409,18 +403,12 @@ function LessonContent() {
 
           {/* Arabic Verse */}
           <div
-            style={{
-              background: "linear-gradient(135deg, #0a1628, #0d1f3c)",
-              border: "1px solid #378add",
-              borderRadius: "10px",
-              padding: "24px",
-              textAlign: "center",
-              marginBottom: "20px",
-            }}
-          >
+  className="quran-verse"
+  style={{ marginBottom: "20px" }}
+>
             <div
-              className="arabic"
-              style={{ fontSize: "28px", color: "#b5d4f4", lineHeight: "2", marginBottom: "12px" }}
+             className="quran-arabic"
+style={{ marginBottom: "12px" }}
             >
               {c.example2Arabic}
             </div>
