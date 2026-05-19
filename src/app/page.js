@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { LanguageProvider, useLanguage } from "../context/LanguageContext";
 import Navbar from "../components/Navbar";
 import HierarchyDiagram from "../components/HierarchyDiagram";
@@ -72,21 +73,25 @@ function HomeContent() {
 
         {/* CTA Buttons */}
         <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
-          <button
+          <Link
+            href="/lessons/1"
             style={{
               backgroundColor: "var(--color-primary)",
               color: "#0f1117",
-              border: "none",
               borderRadius: "10px",
               padding: "14px 32px",
               fontSize: "16px",
               fontWeight: "700",
               cursor: "pointer",
+              textDecoration: "none",
+              display: "inline-block",
             }}
           >
             {t.startLearning}
-          </button>
-          <button
+          </Link>
+
+          <Link
+            href="/syllabus"
             style={{
               backgroundColor: "transparent",
               color: "var(--color-primary)",
@@ -96,10 +101,12 @@ function HomeContent() {
               fontSize: "16px",
               fontWeight: "600",
               cursor: "pointer",
+              textDecoration: "none",
+              display: "inline-block",
             }}
           >
             {t.viewSyllabus}
-          </button>
+          </Link>
         </div>
       </section>
 
@@ -153,7 +160,8 @@ function HomeContent() {
         </h2>
 
         {/* Lesson Card */}
-        <div
+        <Link
+          href="/lessons/1"
           style={{
             backgroundColor: "var(--color-surface)",
             border: "1px solid var(--color-border)",
@@ -163,6 +171,8 @@ function HomeContent() {
             alignItems: "center",
             gap: "20px",
             cursor: "pointer",
+            textDecoration: "none",
+            color: "var(--color-text)",
             transition: "border-color 0.2s",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-primary)")}
@@ -197,7 +207,7 @@ function HomeContent() {
             </div>
           </div>
           <div style={{ color: "var(--color-primary)", fontSize: "20px" }}>←</div>
-        </div>
+        </Link>
       </section>
     </div>
   );
