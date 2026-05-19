@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #0f1117;
+  --color-surface: #1a1d2e;
+  --color-surface2: #232640;
+  --color-primary: #c9a84c;
+  --color-primary-light: #e8c97a;
+  --color-text: #f0ece0;
+  --color-text-muted: #9e9a8e;
+  --color-border: #2e3150;
+  --color-teal: #2dd4bf;
+  --color-amber: #f59e0b;
+  --color-coral: #f87171;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  line-height: 2;
+}
+
+.urdu {
+  font-family: 'Noto Naskh Arabic', serif;
+  direction: rtl;
+  line-height: 2;
+}

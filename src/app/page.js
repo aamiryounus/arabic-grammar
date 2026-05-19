@@ -1,0 +1,212 @@
+"use client";
+
+import { LanguageProvider, useLanguage } from "../context/LanguageContext";
+import Navbar from "../components/Navbar";
+import HierarchyDiagram from "../components/HierarchyDiagram";
+
+function HomeContent() {
+  const { language, t } = useLanguage();
+  const isUrdu = language === "ur";
+
+  return (
+    <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
+      <Navbar />
+
+      {/* Hero Section */}
+      <section
+        style={{
+          textAlign: "center",
+          padding: "80px 2rem 60px",
+          maxWidth: "800px",
+          margin: "0 auto",
+        }}
+      >
+        <div
+          className="arabic"
+          style={{
+            fontSize: "48px",
+            color: "var(--color-primary)",
+            marginBottom: "8px",
+          }}
+        >
+          بِسْمِ اللهِ
+        </div>
+
+        <h1
+          className={isUrdu ? "urdu" : ""}
+          style={{
+            fontSize: "clamp(28px, 5vw, 48px)",
+            fontWeight: "700",
+            color: "var(--color-text)",
+            marginBottom: "16px",
+            lineHeight: "1.3",
+          }}
+        >
+          {t.appName}
+        </h1>
+
+        <p
+          className={isUrdu ? "urdu" : ""}
+          style={{
+            fontSize: "18px",
+            color: "var(--color-primary-light)",
+            marginBottom: "12px",
+          }}
+        >
+          {t.appSubtitle}
+        </p>
+
+        <p
+          className={isUrdu ? "urdu" : ""}
+          style={{
+            fontSize: "16px",
+            color: "var(--color-text-muted)",
+            lineHeight: "1.8",
+            marginBottom: "40px",
+            maxWidth: "600px",
+            margin: "0 auto 40px",
+          }}
+        >
+          {t.heroDescription}
+        </p>
+
+        {/* CTA Buttons */}
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+          <button
+            style={{
+              backgroundColor: "var(--color-primary)",
+              color: "#0f1117",
+              border: "none",
+              borderRadius: "10px",
+              padding: "14px 32px",
+              fontSize: "16px",
+              fontWeight: "700",
+              cursor: "pointer",
+            }}
+          >
+            {t.startLearning}
+          </button>
+          <button
+            style={{
+              backgroundColor: "transparent",
+              color: "var(--color-primary)",
+              border: "1px solid var(--color-primary)",
+              borderRadius: "10px",
+              padding: "14px 32px",
+              fontSize: "16px",
+              fontWeight: "600",
+              cursor: "pointer",
+            }}
+          >
+            {t.viewSyllabus}
+          </button>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div style={{ height: "1px", backgroundColor: "var(--color-border)", margin: "0 2rem" }} />
+
+      {/* Diagram Section */}
+      <section style={{ padding: "60px 2rem", maxWidth: "800px", margin: "0 auto" }}>
+        <h2
+          className={isUrdu ? "urdu" : ""}
+          style={{
+            textAlign: "center",
+            fontSize: "24px",
+            fontWeight: "600",
+            color: "var(--color-text)",
+            marginBottom: "8px",
+          }}
+        >
+          {t.diagramTitle}
+        </h2>
+        <p
+          className={isUrdu ? "urdu" : ""}
+          style={{
+            textAlign: "center",
+            color: "var(--color-text-muted)",
+            marginBottom: "40px",
+            fontSize: "15px",
+          }}
+        >
+          {t.diagramSubtitle}
+        </p>
+
+        <HierarchyDiagram />
+      </section>
+
+      {/* Divider */}
+      <div style={{ height: "1px", backgroundColor: "var(--color-border)", margin: "0 2rem" }} />
+
+      {/* Lessons Preview Section */}
+      <section style={{ padding: "60px 2rem", maxWidth: "900px", margin: "0 auto" }}>
+        <h2
+          className={isUrdu ? "urdu" : ""}
+          style={{
+            fontSize: "22px",
+            fontWeight: "600",
+            color: "var(--color-primary)",
+            marginBottom: "24px",
+          }}
+        >
+          {t.level1}
+        </h2>
+
+        {/* Lesson Card */}
+        <div
+          style={{
+            backgroundColor: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
+            borderRadius: "12px",
+            padding: "24px",
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            cursor: "pointer",
+            transition: "border-color 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-primary)")}
+          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--color-border)")}
+        >
+          <div
+            style={{
+              backgroundColor: "var(--color-surface2)",
+              borderRadius: "8px",
+              padding: "12px 16px",
+              fontSize: "24px",
+              color: "var(--color-primary)",
+              fontWeight: "700",
+              minWidth: "56px",
+              textAlign: "center",
+            }}
+          >
+            ١
+          </div>
+          <div style={{ flex: 1 }}>
+            <div
+              className={isUrdu ? "urdu" : ""}
+              style={{ fontSize: "18px", fontWeight: "600", marginBottom: "4px" }}
+            >
+              {t.lesson1Title}
+            </div>
+            <div
+              className={isUrdu ? "urdu" : ""}
+              style={{ fontSize: "14px", color: "var(--color-text-muted)" }}
+            >
+              {t.lesson1Desc}
+            </div>
+          </div>
+          <div style={{ color: "var(--color-primary)", fontSize: "20px" }}>←</div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <LanguageProvider>
+      <HomeContent />
+    </LanguageProvider>
+  );
+}
