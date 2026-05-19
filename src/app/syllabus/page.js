@@ -30,7 +30,7 @@ const syllabusData = {
             title: "Introduction to Particles",
             arabic: "الحروف",
             desc: "Overview of all particle types in Arabic",
-            ready: false,
+            ready: true,
             subsections: [
               { title: "Arabic Alphabets", arabic: "حروف الهجاء" },
               { title: "Conjunctive Particles", arabic: "حروف العطف" },
@@ -49,7 +49,7 @@ const syllabusData = {
             title: "Introduction to Nouns",
             arabic: "الاسم",
             desc: "Properties and types of Arabic nouns",
-            ready: false,
+            ready: true,
             subsections: [
               { title: "Properties of Nouns", arabic: "خصائص الاسم" },
               { title: "Gender", arabic: "المذكر والمؤنث" },

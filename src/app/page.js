@@ -160,7 +160,7 @@ function HomeContent() {
           {t.level1}
         </h2>
 
-        {/* Lesson Card */}
+        {/* Lesson 1 Card */}
         <Link
           href="/lessons/1"
           style={{
@@ -209,6 +209,58 @@ function HomeContent() {
           </div>
           <div style={{ color: "var(--color-primary)", fontSize: "20px" }}>←</div>
         </Link>
+
+        {/* Lesson 2 Card */}
+        <Link
+          href="/lessons/2"
+          style={{
+            backgroundColor: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
+            borderRadius: "12px",
+            padding: "24px",
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            cursor: "pointer",
+            textDecoration: "none",
+            color: "var(--color-text)",
+            transition: "border-color 0.2s",
+            marginTop: "12px",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-primary)")}
+          onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--color-border)")}
+        >
+          <div
+            style={{
+              backgroundColor: "var(--color-surface2)",
+              borderRadius: "8px",
+              padding: "12px 16px",
+              fontSize: "24px",
+              color: "var(--color-primary)",
+              fontWeight: "700",
+              minWidth: "56px",
+              textAlign: "center",
+            }}
+          >
+            ٢
+          </div>
+          <div style={{ flex: 1 }}>
+            <div
+              className={isUrdu ? "urdu" : ""}
+              style={{ fontSize: "18px", fontWeight: "600", marginBottom: "4px" }}
+            >
+              {isUrdu ? "حروف کا تعارف" : "Introduction to Particles"}
+            </div>
+            <div
+              className={isUrdu ? "urdu" : ""}
+              style={{ fontSize: "14px", color: "var(--color-text-muted)" }}
+            >
+              {isUrdu ? "عربی کے تمام حروف کی اقسام" : "All 10 types of Arabic particles"}
+            </div>
+          </div>
+          <div style={{ color: "var(--color-primary)", fontSize: "20px" }}>←</div>
+        </Link>
+
       </section>
       <Footer />
     </div>
