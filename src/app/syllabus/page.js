@@ -158,7 +158,7 @@ const syllabusData = {
             title: "اسم کا تعارف",
             arabic: "الاسم",
             desc: "عربی اسم کی خصوصیات اور اقسام",
-            ready: false,
+            ready: true,
             subsections: [
               { title: "اسم کی خصوصیات", arabic: "خصائص الاسم" },
               { title: "جنس", arabic: "المذكر والمؤنث" },

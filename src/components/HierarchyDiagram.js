@@ -113,13 +113,15 @@ export default function HierarchyDiagram() {
           markerEnd="url(#arrowhead)" />
 
         {/* ===== اسم ===== */}
-        <rect x="30" y="340" width="160" height="70" rx="8"
-          fill="#085041" stroke="#1d9e75" strokeWidth="1" />
-        <text x="110" y="362" textAnchor="middle" dominantBaseline="central"
-          fontFamily="'Noto Naskh Arabic', serif" fontSize="26"
-          fill="#9fe1cb" fontWeight="500">اسم</text>
-        <text x="110" y="390" textAnchor="middle" dominantBaseline="central"
-          fontSize="12" fill="#5dcaa5">Noun</text>
+        <a href="/lessons/3" style={{ cursor: "pointer" }}>
+  <rect x="30" y="340" width="160" height="70" rx="8"
+    fill="#085041" stroke="#1d9e75" strokeWidth="1" />
+  <text x="110" y="362" textAnchor="middle" dominantBaseline="central"
+    fontFamily="'Noto Naskh Arabic', serif" fontSize="26"
+    fill="#9fe1cb" fontWeight="500">اسم</text>
+  <text x="110" y="390" textAnchor="middle" dominantBaseline="central"
+    fontSize="12" fill="#5dcaa5">Noun — Click to Learn</text>
+</a>
 
         {/* ===== فعل ===== */}
         <rect x="260" y="340" width="160" height="70" rx="8"
@@ -131,14 +133,15 @@ export default function HierarchyDiagram() {
           fontSize="12" fill="#ef9f27">Verb</text>
 
         {/* ===== حرف ===== */}
-        <rect x="490" y="340" width="160" height="70" rx="8"
-          fill="#4a1b0c" stroke="#d85a30" strokeWidth="1" />
-        <text x="570" y="362" textAnchor="middle" dominantBaseline="central"
-          fontFamily="'Noto Naskh Arabic', serif" fontSize="26"
-          fill="#f0997b" fontWeight="500">حرف</text>
-        <text x="570" y="390" textAnchor="middle" dominantBaseline="central"
-          fontSize="12" fill="#d85a30">Particle</text>
-
+        <a href="/lessons/2" style={{ cursor: "pointer" }}>
+  <rect x="490" y="340" width="160" height="70" rx="8"
+    fill="#4a1b0c" stroke="#d85a30" strokeWidth="1" />
+  <text x="570" y="362" textAnchor="middle" dominantBaseline="central"
+    fontFamily="'Noto Naskh Arabic', serif" fontSize="26"
+    fill="#f0997b" fontWeight="500">حرف</text>
+  <text x="570" y="390" textAnchor="middle" dominantBaseline="central"
+    fontSize="12" fill="#d85a30">Particle — Click to Learn</text>
+</a>
         {/* ===== Bottom caption ===== */}
         <text x="340" y="445" textAnchor="middle"
           fontSize="12" fill="#9e9a8e">{t.diagramSubtitle}</text>
