@@ -356,6 +356,85 @@ function LessonContent() {
             </div>
           </div>
         ))}
+        {/* I'rab Section */}
+<h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)", marginTop: "8px" }}>
+  {isUrdu ? "اعراب کا تعارف — الإعراب" : "Introduction to I'rab (Case Endings)"}
+</h2>
+
+<p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", marginBottom: "20px", lineHeight: "1.8" }}>
+  {isUrdu
+    ? "اعراب کا مطلب ہے اسم کے آخر میں حرکت کا بدلنا۔ جملے میں اسم کا کردار بتاتا ہے کہ اس پر کون سی حرکت آئے گی۔ یہ موضوع سطح ۳ میں تفصیل سے پڑھا جائے گا۔"
+    : "I'rab means the change in the ending of a noun based on its role in the sentence. We will study this in full detail in Level 3 — here is a brief introduction."}
+</p>
+
+{/* I'rab Table */}
+<div style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "12px", overflow: "hidden", marginBottom: "16px" }}>
+
+  {/* Table Header */}
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", backgroundColor: "var(--color-surface2)", padding: "12px 20px", borderBottom: "1px solid var(--color-border)" }}>
+    {[
+      isUrdu ? "اعراب" : "Case",
+      isUrdu ? "عربی نام" : "Arabic Name",
+      isUrdu ? "علامت" : "Sign",
+      isUrdu ? "کب آتا ہے" : "When Used",
+    ].map((h, i) => (
+      <div key={i} className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", fontWeight: "700", color: "var(--color-primary)", textAlign: "center" }}>
+        {h}
+      </div>
+    ))}
+  </div>
+
+  {/* Row 1 — Raf' */}
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", padding: "16px 20px", borderBottom: "1px solid var(--color-border)", alignItems: "center" }}>
+    <div style={{ textAlign: "center" }}>
+      <span style={{ backgroundColor: "#085041", border: "1px solid #1d9e75", borderRadius: "6px", padding: "4px 10px", fontSize: "13px", color: "#9fe1cb", fontWeight: "600" }}>
+        {isUrdu ? "رفع" : "Nominative"}
+      </span>
+    </div>
+    <div className="arabic" style={{ fontSize: "18px", color: "#9fe1cb", textAlign: "center" }}>رَفْع</div>
+    <div className="arabic" style={{ fontSize: "22px", color: "#9fe1cb", textAlign: "center", fontWeight: "700" }}>ُ — ٌ</div>
+    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "center", lineHeight: "1.6" }}>
+      {isUrdu ? "جملے کا فاعل یا مبتدا" : "Subject of sentence"}
+    </div>
+  </div>
+
+  {/* Row 2 — Nasb */}
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", padding: "16px 20px", borderBottom: "1px solid var(--color-border)", alignItems: "center" }}>
+    <div style={{ textAlign: "center" }}>
+      <span style={{ backgroundColor: "#633806", border: "1px solid #ef9f27", borderRadius: "6px", padding: "4px 10px", fontSize: "13px", color: "#fac775", fontWeight: "600" }}>
+        {isUrdu ? "نصب" : "Accusative"}
+      </span>
+    </div>
+    <div className="arabic" style={{ fontSize: "18px", color: "#fac775", textAlign: "center" }}>نَصْب</div>
+    <div className="arabic" style={{ fontSize: "22px", color: "#fac775", textAlign: "center", fontWeight: "700" }}>َ — ً</div>
+    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "center", lineHeight: "1.6" }}>
+      {isUrdu ? "فعل کا مفعول" : "Object of verb"}
+    </div>
+  </div>
+
+  {/* Row 3 — Jarr */}
+  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", padding: "16px 20px", alignItems: "center" }}>
+    <div style={{ textAlign: "center" }}>
+      <span style={{ backgroundColor: "#4a1b0c", border: "1px solid #d85a30", borderRadius: "6px", padding: "4px 10px", fontSize: "13px", color: "#f0997b", fontWeight: "600" }}>
+        {isUrdu ? "جر" : "Genitive"}
+      </span>
+    </div>
+    <div className="arabic" style={{ fontSize: "18px", color: "#f0997b", textAlign: "center" }}>جَرّ</div>
+    <div className="arabic" style={{ fontSize: "22px", color: "#f0997b", textAlign: "center", fontWeight: "700" }}>ِ — ٍ</div>
+    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "center", lineHeight: "1.6" }}>
+      {isUrdu ? "حرف جر کے بعد" : "After preposition"}
+    </div>
+  </div>
+</div>
+
+{/* I'rab Note */}
+<div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "8px", padding: "14px 18px", borderLeft: "3px solid var(--color-primary)", marginBottom: "32px" }}>
+  <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
+    💡 {isUrdu
+      ? "یاد رہے: رفع = پیش (ُ)، نصب = زبر (َ)، جر = زیر (ِ)۔ تنوین میں یہی حرکات دوہری ہو جاتی ہیں (ٌ ً ٍ)۔ مکمل اعراب سطح ۳ میں پڑھا جائے گا۔"
+      : "Remember: Raf' = Damma (ُ), Nasb = Fatha (َ), Jarr = Kasra (ِ). With Tanwin these become double (ٌ ً ٍ). Full I'rab will be covered in Level 3."}
+  </p>
+</div>
 
         {/* Key Takeaway */}
         <div style={{ background: "linear-gradient(135deg, #0d2818, #071a0f)", border: "1px solid #1d9e75", borderRadius: "12px", padding: "28px", marginBottom: "40px" }}>
