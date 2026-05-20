@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "../context/LanguageContext";
+import Link from "next/link";
 
 export default function Navbar() {
   const { language, toggleLanguage, t, theme, toggleTheme } = useLanguage();
@@ -22,7 +23,7 @@ export default function Navbar() {
       }}
     >
       {/* App Name */}
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+<Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
         <span style={{ fontSize: "22px" }}>☪️</span>
         <span
           className={language === "ur" ? "urdu" : ""}
