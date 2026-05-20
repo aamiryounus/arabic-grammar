@@ -22,7 +22,15 @@ const lessonContent = {
         arabic: "حروف الهجاء",
         name: "Arabic Alphabets",
         desc: "The 28 letters of the Arabic alphabet — the building blocks of every word in the Quran.",
-        example: "أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن و ه ي",
+        example: [
+  {l:"أ",n:"Alif"},{l:"ب",n:"Ba"},{l:"ت",n:"Ta"},{l:"ث",n:"Sa"},
+  {l:"ج",n:"Jeem"},{l:"ح",n:"Ha"},{l:"خ",n:"Kha"},{l:"د",n:"Dal"},
+  {l:"ذ",n:"Zal"},{l:"ر",n:"Ra"},{l:"ز",n:"Za"},{l:"س",n:"Seen"},
+  {l:"ش",n:"Sheen"},{l:"ص",n:"Saad"},{l:"ض",n:"Zaad"},{l:"ط",n:"Taa"},
+  {l:"ظ",n:"Zaa"},{l:"ع",n:"Ayn"},{l:"غ",n:"Ghayn"},{l:"ف",n:"Fa"},
+  {l:"ق",n:"Qaaf"},{l:"ك",n:"Kaf"},{l:"ل",n:"Lam"},{l:"م",n:"Meem"},
+  {l:"ن",n:"Noon"},{l:"و",n:"Waw"},{l:"ه",n:"Ha"},{l:"ي",n:"Ya"},
+],
         exampleNote: "These 28 letters form every word in the Arabic language.",
         quranicEx: "الٓمٓ",
         quranicRef: "Surah Al-Baqarah (2:1)",
@@ -181,7 +189,15 @@ const lessonContent = {
         arabic: "حروف الهجاء",
         name: "عربی حروف تہجی",
         desc: "عربی کے ۲۸ حروف — قرآن کے ہر لفظ کی بنیاد۔",
-        example: "أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن و ه ي",
+        example: [
+  {l:"أ",n:"Alif"},{l:"ب",n:"Ba"},{l:"ت",n:"Ta"},{l:"ث",n:"Sa"},
+  {l:"ج",n:"Jeem"},{l:"ح",n:"Ha"},{l:"خ",n:"Kha"},{l:"د",n:"Dal"},
+  {l:"ذ",n:"Zal"},{l:"ر",n:"Ra"},{l:"ز",n:"Za"},{l:"س",n:"Seen"},
+  {l:"ش",n:"Sheen"},{l:"ص",n:"Saad"},{l:"ض",n:"Zaad"},{l:"ط",n:"Taa"},
+  {l:"ظ",n:"Zaa"},{l:"ع",n:"Ayn"},{l:"غ",n:"Ghayn"},{l:"ف",n:"Fa"},
+  {l:"ق",n:"Qaaf"},{l:"ك",n:"Kaf"},{l:"ل",n:"Lam"},{l:"م",n:"Meem"},
+  {l:"ن",n:"Noon"},{l:"و",n:"Waw"},{l:"ه",n:"Ha"},{l:"ي",n:"Ya"},
+],
         exampleNote: "یہ ۲۸ حروف عربی زبان کے ہر لفظ کو بناتے ہیں۔",
         quranicEx: "الٓمٓ",
         quranicRef: "سورۃ البقرہ (۲:۱)",
@@ -325,7 +341,47 @@ const lessonContent = {
     nextLesson: "سبق ۳ →",
   },
 };
-
+function AlphabetTable({ letters, borderColor }) {
+  const rows = [];
+  for (let i = 0; i < letters.length; i += 7) {
+    rows.push(letters.slice(i, i + 7));
+  }
+  return (
+    <table
+      style={{
+        width: "100%",
+        borderCollapse: "collapse",
+        marginBottom: "6px",
+        direction: "rtl",
+      }}
+    >
+      <tbody>
+        {rows.map((row, ri) => (
+          <tr key={ri}>
+            {row.map((item, ci) => (
+              <td
+                key={ci}
+                style={{
+                  border: `1px solid ${borderColor}`,
+                  textAlign: "center",
+                  padding: "10px 4px",
+                  width: "14.28%",
+                }}
+              >
+                <div className="arabic" style={{ fontSize: "22px", color: borderColor }}>
+                  {item.l}
+                </div>
+                <div style={{ fontSize: "10px", color: "var(--color-text-muted)", marginTop: "4px" }}>
+                  {item.n}
+                </div>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
 function ParticleCard({ type, isUrdu }) {
   return (
     <div
@@ -402,18 +458,22 @@ function ParticleCard({ type, isUrdu }) {
             borderLeft: `3px solid ${type.border}`,
           }}
         >
-          <div
-            className="arabic"
-            style={{
-              fontSize: "16px",
-              color: type.border,
-              lineHeight: "2",
-              marginBottom: "6px",
-              direction: "rtl",
-            }}
-          >
-            {type.example}
-          </div>
+          {Array.isArray(type.example) ? (
+  <AlphabetTable letters={type.example} borderColor={type.border} />
+) : (
+  <div
+    className="arabic"
+    style={{
+      fontSize: "16px",
+      color: type.border,
+      lineHeight: "2",
+      marginBottom: "6px",
+      direction: "rtl",
+    }}
+  >
+    {type.example}
+  </div>
+)}
           <div
             className={isUrdu ? "urdu" : ""}
             style={{ fontSize: "12px", color: "var(--color-text-muted)" }}
