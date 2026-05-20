@@ -382,6 +382,215 @@ function AlphabetTable({ letters, borderColor }) {
     </table>
   );
 }
+
+function DiacriticsTable({ borderColor, isUrdu }) {
+  const sections = [
+    {
+      name: { en: "Vowels (Harakaat)", ur: "حرکات" },
+      marks: [
+        { symbol: "بَ", name: { en: "Zabar (a)", ur: "زبر" } },
+        { symbol: "بِ", name: { en: "Zer (i)", ur: "زیر" } },
+        { symbol: "بُ", name: { en: "Pesh (u)", ur: "پیش" } },
+      ],
+    },
+    {
+      name: { en: "Sukoon", ur: "سکون" },
+      marks: [
+        { symbol: "بْ", name: { en: "Sukoon (no vowel)", ur: "سکون" } },
+      ],
+    },
+    {
+      name: { en: "Tanween", ur: "تنوین" },
+      marks: [
+        { symbol: "بً", name: { en: "Tanween Zabar (an)", ur: "تنوین زبر" } },
+        { symbol: "بٍ", name: { en: "Tanween Zer (in)", ur: "تنوین زیر" } },
+        { symbol: "بٌ", name: { en: "Tanween Pesh (un)", ur: "تنوین پیش" } },
+      ],
+    },
+  ];
+
+  const lang = isUrdu ? "ur" : "en";
+
+  return (
+    <div style={{ marginTop: "24px" }}>
+      <div
+        className={isUrdu ? "urdu" : ""}
+        style={{
+          fontSize: "16px",
+          fontWeight: "700",
+          color: borderColor,
+          marginBottom: "14px",
+          textAlign: "right",
+        }}
+      >
+       علامات — {isUrdu ? "" : "Diacritical Marks"}
+      </div>
+
+      {sections.map((section, si) => (
+        <div key={si} style={{ marginBottom: "16px" }}>
+          {/* Section Title */}
+          <div
+            className={isUrdu ? "urdu" : "arabic"}
+            style={{
+              fontSize: "13px",
+              color: "var(--color-text-muted)",
+              marginBottom: "8px",
+              textAlign: "right",
+            }}
+          >
+            {section.name[lang]}
+          </div>
+
+          {/* Marks Row */}
+          <div
+            style={{
+              display: "flex",
+              gap: "12px",
+              flexWrap: "wrap",
+              justifyContent: "flex-end",
+            }}
+          >
+            {section.marks.map((mark, mi) => (
+              <div
+                key={mi}
+                style={{
+                  border: `1px solid ${borderColor}`,
+                  borderRadius: "8px",
+                  padding: "12px 16px",
+                  textAlign: "center",
+                  minWidth: "80px",
+                }}
+              >
+                <div
+                  className="arabic"
+                  style={{
+                    fontSize: "28px",
+                    color: borderColor,
+                    lineHeight: "2",
+                  }}
+                >
+                  {mark.symbol}
+                </div>
+                <div
+                  style={{
+                    width: "40px",
+                    height: "1px",
+                    backgroundColor: borderColor,
+                    margin: "4px auto 6px",
+                    opacity: 0.4,
+                  }}
+                />
+                <div
+                  className={isUrdu ? "urdu" : ""}
+                  style={{
+                    fontSize: "10px",
+                    color: "var(--color-text-muted)",
+                  }}
+                >
+                  {mark.name[lang]}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+function AlifHamzaSection({ borderColor, isUrdu }) {
+  return (
+    <div style={{ marginTop: "28px" }}>
+      {/* Title */}
+      <div
+        className="urdu"
+        style={{
+          fontSize: "16px",
+          fontWeight: "700",
+          color: borderColor,
+          marginBottom: "14px",
+          textAlign: "right",
+        }}
+      >
+        الف اور ہمزہ میں فرق
+      </div>
+
+      {/* Rule Box */}
+      <div
+        style={{
+          backgroundColor: "var(--color-surface2)",
+          borderRadius: "8px",
+          padding: "14px 18px",
+          marginBottom: "16px",
+          borderRight: `3px solid ${borderColor}`,
+          textAlign: "right",
+        }}
+      >
+        <p className="urdu" style={{ fontSize: "14px", color: "var(--color-text)", lineHeight: "2", margin: 0 }}>
+          جب الف پر تینوں حرکات (زبر، زیر، پیش) یا سکون (<span className="arabic">ْ</span>) آجائے تو وہ <strong>ہمزہ</strong> کہلاتا ہے۔
+        </p>
+      </div>
+
+      {/* Alif vs Hamza comparison */}
+      <div style={{ display: "flex", gap: "12px", justifyContent: "flex-end", marginBottom: "20px", flexWrap: "wrap" }}>
+        <div style={{ border: `1px solid ${borderColor}`, borderRadius: "8px", padding: "12px 24px", textAlign: "center", minWidth: "100px" }}>
+          <div className="arabic" style={{ fontSize: "32px", color: borderColor }}>ا</div>
+          <div style={{ width: "40px", height: "1px", backgroundColor: borderColor, margin: "4px auto 6px", opacity: 0.4 }} />
+          <div className="urdu" style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>الف</div>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", color: "var(--color-text-muted)", fontSize: "20px" }}>≠</div>
+        <div style={{ border: `1px solid ${borderColor}`, borderRadius: "8px", padding: "12px 24px", textAlign: "center", minWidth: "100px" }}>
+          <div className="arabic" style={{ fontSize: "32px", color: borderColor }}>أ إ آ ء</div>
+          <div style={{ width: "40px", height: "1px", backgroundColor: borderColor, margin: "4px auto 6px", opacity: 0.4 }} />
+          <div className="urdu" style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>ہمزہ</div>
+        </div>
+      </div>
+
+      {/* Example 1: اِقْرَاْ */}
+      <div style={{ marginBottom: "16px" }}>
+        <div className="urdu" style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "right", marginBottom: "8px" }}>
+          مثال ۱
+        </div>
+        <div style={{ border: `1px solid ${borderColor}`, borderRadius: "8px", padding: "16px", textAlign: "center" }}>
+          <div className="arabic" style={{ fontSize: "36px", color: borderColor, letterSpacing: "8px", marginBottom: "8px" }}>
+            اِقْرَأْ
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", gap: "24px", flexWrap: "wrap", marginTop: "8px" }}>
+            <div style={{ textAlign: "center" }}>
+              <div className="arabic" style={{ fontSize: "24px", color: borderColor }}>أْ</div>
+              <div style={{ width: "30px", height: "1px", backgroundColor: borderColor, margin: "4px auto 4px", opacity: 0.4 }} />
+              <div className="urdu" style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>ہمزہ ہے</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Example 2: اِنْسَان */}
+      <div style={{ marginBottom: "8px" }}>
+        <div className="urdu" style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "right", marginBottom: "8px" }}>
+          مثال ۲
+        </div>
+        <div style={{ border: `1px solid ${borderColor}`, borderRadius: "8px", padding: "16px", textAlign: "center" }}>
+          <div className="arabic" style={{ fontSize: "36px", color: borderColor, letterSpacing: "8px", marginBottom: "8px" }}>
+            إِنْسَان
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", gap: "32px", flexWrap: "wrap", marginTop: "8px" }}>
+            <div style={{ textAlign: "center" }}>
+              <div className="arabic" style={{ fontSize: "24px", color: borderColor }}>ا</div>
+              <div style={{ width: "30px", height: "1px", backgroundColor: borderColor, margin: "4px auto 4px", opacity: 0.4 }} />
+              <div className="urdu" style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>الف ہے (سین کے بعد)</div>
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <div className="arabic" style={{ fontSize: "24px", color: borderColor }}>إِ</div>
+              <div style={{ width: "30px", height: "1px", backgroundColor: borderColor, margin: "4px auto 4px", opacity: 0.4 }} />
+              <div className="urdu" style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>ہمزہ ہے (شروع میں)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  );
+}
 function ParticleCard({ type, isUrdu }) {
   return (
     <div
@@ -459,7 +668,42 @@ function ParticleCard({ type, isUrdu }) {
           }}
         >
           {Array.isArray(type.example) ? (
+  <>
   <AlphabetTable letters={type.example} borderColor={type.border} />
+  <div
+  className={isUrdu ? "urdu" : ""}
+  style={{ fontSize: "12px", color: "var(--color-text-muted)" }}
+>
+  💡 {type.exampleNote}
+</div>
+  {/* Quranic Example — moved here for card 2.1 */}
+  <div
+    style={{
+      background: "linear-gradient(135deg, #0a1628, #0d1f3c)",
+      border: "1px solid #378add",
+      borderRadius: "10px",
+      padding: "20px",
+      textAlign: "center",
+      marginTop: "16px",
+      marginBottom: "4px",
+    }}
+  >
+    <div style={{ fontSize: "11px", color: "#85b7eb", marginBottom: "10px", textTransform: "uppercase", letterSpacing: "1px" }}>
+      🕌 Quranic Example
+    </div>
+    <div className="arabic" style={{ fontSize: "24px", color: "#b5d4f4", lineHeight: "2", marginBottom: "10px" }}>
+      {type.quranicEx}
+    </div>
+    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "#85b7eb", fontStyle: isUrdu ? "normal" : "italic", marginBottom: "6px" }}>
+      {type.quranicTrans}
+    </div>
+    <div style={{ fontSize: "11px", color: "#5a8ab8" }}>
+      {type.quranicRef}
+    </div>
+  </div>
+  <DiacriticsTable borderColor={type.border} isUrdu={isUrdu} />
+  <AlifHamzaSection borderColor={type.border} isUrdu={isUrdu} />
+</>
 ) : (
   <div
     className="arabic"
@@ -474,12 +718,7 @@ function ParticleCard({ type, isUrdu }) {
     {type.example}
   </div>
 )}
-          <div
-            className={isUrdu ? "urdu" : ""}
-            style={{ fontSize: "12px", color: "var(--color-text-muted)" }}
-          >
-            💡 {type.exampleNote}
-          </div>
+         
         </div>
 
         {/* Quranic Example */}
