@@ -35,7 +35,7 @@ export default function Navbar() {
         >
           {t.appName}
         </span>
-      </div>
+      </Link>
 
       {/* Right side buttons */}
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
