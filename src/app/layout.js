@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Quranic Arabic Academy | قرآنی عربی اکیڈمی",
+  title: "Quranic Arabic Grammar | قرآنی عربی گرامر",
   description: "Learn Quranic Arabic Grammar from beginner to advanced",
 };
 
