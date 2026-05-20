@@ -539,7 +539,7 @@ function AlifHamzaSection({ borderColor, isUrdu }) {
         </div>
         <div style={{ display: "flex", alignItems: "center", color: "var(--color-text-muted)", fontSize: "20px" }}>≠</div>
         <div style={{ border: `1px solid ${borderColor}`, borderRadius: "8px", padding: "12px 24px", textAlign: "center", minWidth: "100px" }}>
-          <div className="arabic" style={{ fontSize: "32px", color: borderColor }}>أ إ آ ء</div>
+          <div className="arabic" style={{ fontSize: "32px", color: borderColor }}>اَ اِ اُ اْ</div>
           <div style={{ width: "40px", height: "1px", backgroundColor: borderColor, margin: "4px auto 6px", opacity: 0.4 }} />
           <div className="urdu" style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>ہمزہ</div>
         </div>
