@@ -15,7 +15,8 @@ const lessonContent = {
       "The Ism (اسم) is the most common part of speech in the Quran. More than half of all Quranic words are Isms. Understanding nouns — their properties, gender, number, and case — is the foundation of reading and understanding Arabic.",
     goldenRule:
       "An Ism (Noun) has three key signs: it accepts Tanwin (ٌ), it accepts ال, and it can follow a preposition (حرف جر).",
-    propertiesTitle: "Properties of Nouns",
+    propertiesTitle: "Recognition of Nouns",
+    propertiesSubTitle: "Properties of Noun",
     properties: [
       {
         arabic: "التنوين",
@@ -47,9 +48,19 @@ const lessonContent = {
         border: "#378add",
         text: "#b5d4f4",
       },
+      {
+  arabic: "تاء مربوطة",
+  name: "Taa Marbuta (ة)",
+  desc: "If a word ends with a round Taa (ة or ـة), it is definitely a noun.",
+  example: "مَدْرَسَة — فَاطِمَة — سُورَة",
+  exampleNote: "This ending always marks a noun — never a verb or particle.",
+  color: "#3c3489",
+  border: "#7f77dd",
+  text: "#cecbf6",
+},
     ],
     genderTitle: "Gender — المذكر والمؤنث",
-    genderDesc: "Every Arabic noun is either masculine (مذكر) or feminine (مؤنث). There is no neutral gender.",
+    genderDesc: "Every Arabic noun is either masculine (مذکر) or feminine (مؤنث). There is no neutral gender. And every noun is masculine, until it is proven to be feminine.",
     genderTable: [
       { type: "Masculine (مذكر)", sign: "No special ending", examples: "رَجُل (man), كِتَاب (book), قَلَم (pen)", color: "#085041", border: "#1d9e75", text: "#9fe1cb" },
       { type: "Feminine (مؤنث)", sign: "Usually ends in ة (Ta Marbuta)", examples: "مَرْأَة (woman), مَدْرَسَة (school), سُورَة (surah)", color: "#4a1b0c", border: "#d85a30", text: "#f0997b" },
@@ -111,7 +122,8 @@ const lessonContent = {
       "اسم قرآن میں کلام کا سب سے عام جزء ہے۔ قرآن کے آدھے سے زیادہ الفاظ اسم ہیں۔ اسم کی خصوصیات، جنس، عدد اور اعراب کو سمجھنا عربی پڑھنے کی بنیاد ہے۔",
     goldenRule:
       "اسم کی تین علامات ہیں: اس پر تنوین آتی ہے، اس پر ال لگ سکتا ہے، اور یہ حرف جر کے بعد آ سکتا ہے۔",
-    propertiesTitle: "اسم کی خصوصیات",
+    propertiesTitle: "اسم کی پہچان",
+    propertiesSubTitle: "اسم کی خصوصیات",
     properties: [
       {
         arabic: "التنوين",
@@ -143,9 +155,19 @@ const lessonContent = {
         border: "#378add",
         text: "#b5d4f4",
       },
+      {
+  arabic: "تاء مربوطة",
+  name: "تاء مربوطہ (ة)",
+  desc: "لفظ کے آخر میں گول تا (ة یا ـة) آ جائے تو وہ لازمی اسم ہوتا ہے۔",
+  example: "مَدْرَسَة — فَاطِمَة — سُورَة",
+  exampleNote: "یہ علامت ہمیشہ اسم پر آتی ہے، فعل یا حرف پر نہیں۔",
+  color: "#3c3489",
+  border: "#7f77dd",
+  text: "#cecbf6",
+},
     ],
     genderTitle: "جنس — المذكر والمؤنث",
-    genderDesc: "عربی کا ہر اسم یا مذکر ہے یا مؤنث۔ کوئی غیر جانبدار جنس نہیں ہوتی۔",
+    genderDesc: " عربی کا ہر اسم یا مذکر ہے یا مؤنث۔ کوئی غیر جانبدار جنس نہیں ہوتی ۔اور ہر اسم مذکر ہے جب تک اس کا مؤنث ہونا ثابت نہ ہو جائے۔",
     genderTable: [
       { type: "مذکر", sign: "کوئی خاص علامت نہیں", examples: "رَجُل (مرد)، كِتَاب (کتاب)، قَلَم (قلم)", color: "#085041", border: "#1d9e75", text: "#9fe1cb" },
       { type: "مؤنث", sign: "عموماً ة (تاء مربوطہ) پر ختم ہوتا ہے", examples: "مَرْأَة (عورت)، مَدْرَسَة (مدرسہ)، سُورَة (سورت)", color: "#4a1b0c", border: "#d85a30", text: "#f0997b" },
@@ -154,7 +176,7 @@ const lessonContent = {
     numberTitle: "عدد — المفرد والمثنى والجمع",
     numberDesc: "عربی میں تین عدد ہیں — مفرد، مثنیٰ اور جمع۔",
     numbers: [
-      { arabic: "مُفْرَد", name: "مفرد", desc: "ایک", example: "كِتَاب (ایک کتاب)", color: "#3c3489", border: "#7f77dd", text: "#cecbf6" },
+      { arabic: "مُفْرَد", name: "واحد", desc: "ایک", example: "كِتَاب (ایک کتاب)", color: "#3c3489", border: "#7f77dd", text: "#cecbf6" },
       { arabic: "مُثَنَّى", name: "مثنیٰ", desc: "بالکل دو", example: "كِتَابَان (دو کتابیں)", color: "#085041", border: "#1d9e75", text: "#9fe1cb" },
       { arabic: "جَمْع", name: "جمع", desc: "تین یا زیادہ", example: "كُتُب (کتابیں)", color: "#633806", border: "#ef9f27", text: "#fac775" },
     ],
@@ -274,6 +296,51 @@ function LessonContent() {
             </div>
           </div>
         ))}
+        {/* Properties of Noun Heading */}
+        <h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "20px", marginTop: "40px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)" }}>
+          {c.propertiesSubTitle}
+        </h2>
+<p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", lineHeight: "1.8", marginBottom: "20px", textAlign: isUrdu ? "right" : "left" }}>
+          {isUrdu
+            ? "عربی میں اسم کو جملے میں استعمال کرنے کے لیے اس کی چار خصوصیات کا جاننا ضروری ہے۔ جنس، عدد، وسعت (نکرہ/معرفہ)، اعراب۔"
+            : "To use a noun correctly in an Arabic sentence, you must know its four properties: Gender, Number, Definiteness, and Status (I'rab)."}
+        </p>
+        {/* Hierarchy Diagram */}
+        <div style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "16px", padding: "32px 24px", marginBottom: "32px", textAlign: "center" }}>
+
+          {/* Top Node */}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ backgroundColor: "#1a3a2a", border: "2px solid var(--color-primary)", borderRadius: "12px", padding: "14px 36px" }}>
+              <div className="arabic" style={{ fontSize: "20px", color: "var(--color-primary)", fontWeight: "700" }}>الاسم</div>
+              <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-primary)", marginTop: "4px" }}>{isUrdu ? "اسم" : "Noun"}</div>
+            </div>
+          </div>
+
+          {/* Vertical stem */}
+          <div style={{ width: "2px", height: "32px", backgroundColor: "var(--color-primary)", margin: "0 auto" }} />
+
+          {/* Horizontal bar */}
+          <div style={{ maxWidth: "700px", margin: "0 auto", height: "2px", backgroundColor: "var(--color-border)" }} />
+
+          {/* 4 Branch nodes */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px", maxWidth: "700px", margin: "0 auto" }}>
+            {[
+              { arabic: "الجنس", en: "Gender", ur: "جنس", color: "#085041", border: "#1d9e75", text: "#9fe1cb", sub: isUrdu ? "مذکر / مؤنث" : "Masculine / Feminine" },
+              { arabic: "العدد", en: "Number", ur: "عدد", color: "#3c3489", border: "#7f77dd", text: "#cecbf6", sub: isUrdu ? "مفرد / مثنیٰ / جمع" : "Singular / Dual / Plural" },
+              { arabic: "التعريف", en: "Definiteness", ur: "معرفہ و نکرہ", color: "#633806", border: "#ef9f27", text: "#fac775", sub: isUrdu ? "معرفہ / نکرہ" : "Definite / Indefinite" },
+              { arabic: "الإعراب", en: "Status", ur: "اعراب", color: "#4a1b0c", border: "#d85a30", text: "#f0997b", sub: isUrdu ? "رفع / نصب / جر" : "Raf' / Nasb / Jarr" },
+            ].map((node, i) => (
+              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div style={{ width: "2px", height: "32px", backgroundColor: node.border }} />
+                <div style={{ backgroundColor: node.color, border: `2px solid ${node.border}`, borderRadius: "10px", padding: "14px 10px", width: "100%", textAlign: "center" }}>
+                  <div className="arabic" style={{ fontSize: "16px", color: node.text, fontWeight: "600", marginBottom: "4px" }}>{node.arabic}</div>
+                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: node.text, fontWeight: "700", marginBottom: "6px" }}>{isUrdu ? node.ur : node.en}</div>
+                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "11px", color: node.text, opacity: 0.75 }}>{node.sub}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Gender */}
         <h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)", marginTop: "32px" }}>
