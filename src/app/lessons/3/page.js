@@ -116,8 +116,8 @@ const lessonContent = {
   ur: {
     title: "اسم کا تعارف",
     arabicTitle: "الاسم",
-    level: "سطح ۱ — بنیادیات",
-    lessonNumber: "سبق ۳",
+    level: "لیول ۱ — بنیادیات",
+    lessonNumber: "سبق 3",
     intro:
       "اسم قرآن میں کلام کا سب سے عام جزء ہے۔ قرآن کے آدھے سے زیادہ الفاظ اسم ہیں۔ اسم کی خصوصیات، جنس، عدد اور اعراب کو سمجھنا عربی پڑھنے کی بنیاد ہے۔",
     goldenRule:
@@ -240,7 +240,7 @@ function LessonContent() {
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
-      <Navbar />
+  <Navbar currentLesson={3} />   {/* ← number matches the lesson */}
 
       <div className="animate-fadeInUp" style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
 
@@ -430,8 +430,8 @@ function LessonContent() {
 
 <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", marginBottom: "20px", lineHeight: "1.8" }}>
   {isUrdu
-    ? "اعراب کا مطلب ہے اسم کے آخر میں حرکت کا بدلنا۔ جملے میں اسم کا کردار بتاتا ہے کہ اس پر کون سی حرکت آئے گی۔ یہ موضوع سطح ۳ میں تفصیل سے پڑھا جائے گا۔"
-    : "I'rab means the change in the ending of a noun based on its role in the sentence. We will study this in full detail in Level 3 — here is a brief introduction."}
+    ? "اعراب کا مطلب ہے اسم کے آخر میں حرکت کا بدلنا۔ جملے میں اسم کا کردار بتاتا ہے کہ اس پر کون سی حرکت آئے گی۔ یہ موضوع لیول ۲ میں تفصیل سے پڑھا جائے گا۔"
+    : "I'rab means the change in the ending of a noun based on its role in the sentence. We will study this in full detail in Level 2 — here is a brief introduction."}
 </p>
 
 {/* I'rab Table */}
@@ -498,7 +498,7 @@ function LessonContent() {
 <div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "8px", padding: "14px 18px", borderLeft: "3px solid var(--color-primary)", marginBottom: "32px" }}>
   <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)", lineHeight: "1.7" }}>
     💡 {isUrdu
-      ? "یاد رہے: رفع = پیش (ُ)، نصب = زبر (َ)، جر = زیر (ِ)۔ تنوین میں یہی حرکات دوہری ہو جاتی ہیں (ٌ ً ٍ)۔ مکمل اعراب سطح ۳ میں پڑھا جائے گا۔"
+      ? "یاد رہے: رفع = پیش (ُ)، نصب = زبر (َ)، جر = زیر (ِ)۔ تنوین میں یہی حرکات دوہری ہو جاتی ہیں (ٌ ً ٍ)۔ مکمل اعراب لیول ۲ میں پڑھا جائے گا۔"
       : "Remember: Raf' = Damma (ُ), Nasb = Fatha (َ), Jarr = Kasra (ِ). With Tanwin these become double (ٌ ً ٍ). Full I'rab will be covered in Level 3."}
   </p>
 </div>
@@ -521,9 +521,9 @@ function LessonContent() {
           <Link href="/" style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "8px", padding: "12px 24px", color: "var(--color-text)", textDecoration: "none", fontSize: "15px" }}>
             {c.backHome}
           </Link>
-          <button style={{ backgroundColor: "var(--color-primary)", border: "none", borderRadius: "8px", padding: "12px 24px", color: "#0f1117", fontSize: "15px", fontWeight: "700", cursor: "pointer" }}>
-            {c.nextLesson}
-          </button>
+         <Link href="/lessons/4" style={{ backgroundColor: "var(--color-primary)", border: "none", borderRadius: "8px", padding: "12px 24px", color: "#0f1117", fontSize: "15px", fontWeight: "700", cursor: "pointer", textDecoration: "none", display: "inline-block" }}>
+  {c.nextLesson}
+</Link>
         </div>
 
       </div>

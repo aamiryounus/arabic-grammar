@@ -79,7 +79,7 @@ const lessonContent = {
     title: "کلام کے تین اجزاء",
     arabicTitle: "الكلمة وأقسامها",
     level: "سطح ۱ — بنیادیات",
-    lessonNumber: "سبق ۱",
+    lessonNumber: "سبق 1",
     intro:
       "عربی زبان میں — اور خاص طور پر قرآن مجید میں — ہر لفظ صرف تین میں سے ایک قسم کا ہوتا ہے۔ یہ پوری عربی گرامر کا سب سے اہم اصول ہے۔ اگر آپ یہ سمجھ لیں تو پوری زبان کی چابی آپ کے ہاتھ میں ہے۔",
     goldenRule:
@@ -196,7 +196,7 @@ function LessonContent() {
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
-      <Navbar />
+  <Navbar currentLesson={1} />   {/* ← number matches the lesson */}
 
       <div className="animate-fadeInUp" style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
 

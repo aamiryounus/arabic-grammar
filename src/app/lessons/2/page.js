@@ -177,7 +177,7 @@ const lessonContent = {
     title: "حروف کا تعارف",
     arabicTitle: "الحروف",
     level: "سطح ۱ — بنیادیات",
-    lessonNumber: "سبق ۲",
+    lessonNumber: "سبق 2",
     intro:
       "حروف وہ الفاظ ہیں جن کا اپنا کوئی مستقل مطلب نہیں ہوتا۔ یہ صرف اسم یا فعل کے ساتھ مل کر معنی دیتے ہیں۔ حروف قرآن میں بہت زیادہ آتے ہیں اور گرامر میں گہری اہمیت رکھتے ہیں۔",
     goldenRule:
@@ -780,7 +780,7 @@ function LessonContent() {
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
-      <Navbar />
+  <Navbar currentLesson={2} />   {/* ← number matches the lesson */}
 
       <div className="animate-fadeInUp" style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
 

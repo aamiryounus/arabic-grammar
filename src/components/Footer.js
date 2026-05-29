@@ -33,7 +33,7 @@ export default function Footer() {
               className={isUrdu ? "urdu" : ""}
               style={{ fontSize: "16px", fontWeight: "700", color: "var(--color-primary)" }}
             >
-              {isUrdu ? "قرآنی عربی اکیڈمی" : "Quranic Arabic Academy"}
+              {isUrdu ? "قرآنی عربی گرامر" : "Quranic Arabic Grammar"}
             </span>
           </div>
           <p
