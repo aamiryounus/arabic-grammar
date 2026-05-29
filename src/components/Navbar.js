@@ -7,7 +7,7 @@ import Link from "next/link";
 const lessons = [
   {
     level: "Level 1",
-    levelUr: "لیول 1",
+    levelUr: "سطح ۱",
     title: "Foundations",
     titleUr: "بنیادیات",
     color: "#085041",
@@ -21,7 +21,7 @@ const lessons = [
   },
   {
     level: "Level 2",
-    levelUr: "لیول 2",
+    levelUr: "سطح ۲",
     title: "Case Endings",
     titleUr: "اعراب",
     color: "#185FA5",
@@ -37,7 +37,7 @@ const lessons = [
   },
   {
     level: "Level 3",
-    levelUr: "لیول 3",
+    levelUr: "سطح ۳",
     title: "Verbs & Sentences",
     titleUr: "فعل اور جملے",
     color: "#633806",
@@ -53,7 +53,7 @@ const lessons = [
   },
   {
     level: "Level 4",
-    levelUr: "لیول 4",
+    levelUr: "سطح ۴",
     title: "Verb Morphology",
     titleUr: "صرف",
     color: "#3c3489",
@@ -68,7 +68,7 @@ const lessons = [
   },
   {
     level: "Level 5",
-    levelUr: "لیول 5",
+    levelUr: "سطح ۵",
     title: "Advanced Quranic Analysis",
     titleUr: "قرآنی تجزیہ",
     color: "#4a1b0c",
@@ -106,19 +106,17 @@ export default function Navbar({ currentLesson }) {
           zIndex: 100,
         }}
       >
-        {/* App Name */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
-          <span style={{ fontSize: "22px" }}>☪️</span>
-          <span
-            className={language === "ur" ? "urdu" : ""}
-            style={{ fontSize: "18px", fontWeight: "600", color: "var(--color-primary)" }}
-          >
-            {t.appName}
-          </span>
-        </Link>
-
-        {/* Right side buttons */}
+        {/* Left side: App Name + Lessons button */}
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
+            <span style={{ fontSize: "22px" }}>☪️</span>
+            <span
+              className={language === "ur" ? "urdu" : ""}
+              style={{ fontSize: "18px", fontWeight: "600", color: "var(--color-primary)" }}
+            >
+              {t.appName}
+            </span>
+          </Link>
 
           {/* Lessons Navigator Button */}
           <button
@@ -143,6 +141,10 @@ export default function Navbar({ currentLesson }) {
             <span style={{ fontSize: "16px" }}>📚</span>
             <span className={isUrdu ? "urdu" : ""}>{isUrdu ? "اسباق" : "Lessons"}</span>
           </button>
+        </div>
+
+        {/* Right side buttons */}
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
 
           {/* Theme Toggle */}
           <button
