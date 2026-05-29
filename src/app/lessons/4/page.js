@@ -17,8 +17,7 @@ const lessonContent = {
     arabicTitle: "الإعراب",
     level: "Level 2 — Case Endings",
     lessonNumber: "Lesson 4",
-    intro:
-      "I'rab is the system of case endings in Arabic — the vowel changes that occur at the end of words to show their grammatical role in a sentence. It is what makes Arabic a deeply precise language, where word order is flexible because the endings themselves carry the meaning.",
+    intro: "• I'rab refers to the status of a noun in any Arabic construction.\n• I'rab establishes the position and role of a noun within a sentence or phrase.\n• I'rab is the name given to the finishing of a noun — meaning which vowel mark (fatha, kasra, damma) or tanwin (double fatha, double kasra, double damma) appears on its final letter. Or whether the noun ends with one of the sounds: ūna, īna, ayna.",
     goldenRule:
       "I'rab is the change at the end of a word caused by the factors that govern it. It tells you whether a word is the subject, object, possessive, or something else entirely.",
     tableTitle: "The Four States of I'rab",
@@ -95,8 +94,7 @@ const lessonContent = {
     arabicTitle: "الإعراب",
     level: "لیول 2 — اعراب",  // ✅
     lessonNumber: "سبق 4",
-    intro:
-      "اعراب عربی کا وہ نظام ہے جس میں الفاظ کے آخر میں حرکات تبدیل ہوتی ہیں تاکہ جملے میں ان کا گرامری کردار ظاہر ہو۔ یہی وہ چیز ہے جو عربی کو ایک نہایت درست اور بامعنی زبان بناتی ہے — لفظوں کی ترتیب لچکدار ہوسکتی ہے کیونکہ آخر کی حرکات خود معنی بیان کرتی ہیں۔",
+    intro: "• کسی بھی عربی construction میں اسم کے status کو اعراب کہتے ہیں۔\n• اعراب جملے یا ترکیب میں اسم کا مقام وضع کرتا ہے۔\n• اسم کی Finishing کا نام اعراب ہے۔ مطلب اس کے آخری حرف پر کونسی حرکت (زبر، زیر، پیش)، تنوین (دو زبر، دو زیر، دو پیش) آتی ہے۔ یا اسم اُوۡنَ، اِیۡنَ، اَیۡنِ میں سے کس آواز پر ختم ہوتا ہے۔",
     goldenRule:
       "اعراب وہ تبدیلی ہے جو کسی لفظ کے آخر میں اس کے عاملوں کی وجہ سے آتی ہے — یہ بتاتی ہے کہ لفظ فاعل ہے، مفعول ہے، مضاف الیہ ہے، یا کچھ اور۔",
     tableTitle: "اعراب کی چار حالتیں",
@@ -230,9 +228,9 @@ function LessonContent() {
             {c.title}
           </h1>
           <div className="quran-arabic" style={{ marginBottom: "12px" }}>{c.arabicTitle}</div>
-          <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", color: "var(--color-text-muted)", lineHeight: "1.8" }}>
-            {c.intro}
-          </p>
+          <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", color: "var(--color-text-muted)", lineHeight: "1.8", whiteSpace: "pre-line" }}>
+  {c.intro}
+</p>
         </div>
 
         {/* Golden Rule */}
