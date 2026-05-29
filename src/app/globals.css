@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -35,9 +36,9 @@ body {
 }
 
 .urdu {
-  font-family: 'Noto Naskh Arabic', serif;
+  font-family: 'Noto Nastaliq Urdu', serif;
   direction: rtl;
-  line-height: 2;
+  line-height: 2.5;
 }
 
 /* ===== ANIMATIONS ===== */
