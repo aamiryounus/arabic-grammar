@@ -18,9 +18,9 @@ const lessonContent = {
     level: "Level 2 — Case Endings",
     lessonNumber: "Lesson 5",
     intro:
-      "Raf' is the nominative case in Arabic — the 'default' state of a noun or verb. When a word is in Raf', it typically carries a damma (ُ) at its end. It is the case of subjects, predicate nouns, and the doer of an action.",
+      "Raf' is the nominative case in Arabic — the 'default' state of a noun or verb. When a word is in Raf', it typically carries a damma  at its end. It is the case of subjects, predicate nouns, and the doer of an action.",
     goldenRule:
-      "A word is in Raf' when it is the subject of a sentence (مبتدا), the predicate (خبر), or the doer of a verb (فاعل). Its sign is the damma (ُ) — a single curl above the final letter.",
+      "A word is in Raf' when it is the subject of a sentence (مبتدا), the predicate (خبر), or the doer of a verb (فاعل). Its sign is the damma  — a single curl above the final letter.",
     tableTitle: "When Does Raf' Occur?",
     parts: [
       {
@@ -71,7 +71,7 @@ const lessonContent = {
     ],
     keyTakeaway: "Key Takeaway",
     takeawayText:
-      "Raf' is marked by damma (ُ). It is the case of subjects and doers. Whenever you see a damma at the end of a noun or verb, ask: is this the subject, predicate, or doer? That question will almost always be answered yes.",
+      "Raf' is marked by damma . It is the case of subjects and doers. Whenever you see a damma at the end of a noun or verb, ask: is this the subject, predicate, or doer? That question will almost always be answered yes.",
     backHome: "← Back to Home",
     prevLesson: "← Previous Lesson",
     nextLesson: "Next Lesson →",
@@ -82,9 +82,9 @@ const lessonContent = {
     level: "سطح ۲ — اعراب",
     lessonNumber: "سبق 5" ,
     intro:
-      "رفع عربی کی وہ بنیادی حالت ہے جو اسم یا فعل پر اس وقت آتی ہے جب وہ جملے کا فاعل، مبتدا یا خبر ہو۔ رفع کی علامت پیش (ُ) ہے — ",
+      "رفع عربی کی وہ بنیادی حالت ہے جو اسم یا فعل پر اس وقت آتی ہے جب وہ جملے کا فاعل، مبتدا یا خبر ہو۔ رفع کی علامت پیش  ہے — ",
     goldenRule:
-      "کوئی لفظ رفع میں ہوتا ہے جب وہ جملے کا مبتدا، خبر، یا فاعل ہو۔ اس کی علامت پیش (ُ) ہے۔",
+      "کوئی لفظ رفع میں ہوتا ہے جب وہ جملے کا مبتدا، خبر، یا فاعل ہو۔ اس کی علامت پیش  ہے۔",
     tableTitle: "رفع کب آتا ہے؟",
     parts: [
       {
@@ -135,7 +135,7 @@ const lessonContent = {
     ],
     keyTakeaway: "اہم نکتہ",
     takeawayText:
-      "رفع کی علامت پیش (ُ) ہے۔ یہ مبتدا، خبر اور فاعل پر آتا ہے۔ جب بھی کسی اسم یا فعل کے آخر میں پیش نظر آئے تو سوال کریں: کیا یہ مبتدا، خبر، یا فاعل ہے؟ جواب تقریباً ہمیشہ ہاں ہوگا۔",
+      "رفع کی علامت پیش  ہے۔ یہ مبتدا، خبر اور فاعل پر آتا ہے۔ جب بھی کسی اسم یا فعل کے آخر میں پیش نظر آئے تو سوال کریں: کیا یہ مبتدا، خبر، یا فاعل ہے؟ جواب تقریباً ہمیشہ ہاں ہوگا۔",
     backHome: "← گھر واپس",
     prevLesson: "← پچھلا سبق",
     nextLesson: "اگلا سبق →",
