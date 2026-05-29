@@ -54,7 +54,14 @@ const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("en");
-  const [theme, setTheme] = useState("dark");
+const [theme, setTheme] = useState("dark");
+
+useEffect(() => {
+  const savedLanguage = localStorage.getItem("language");
+  const savedTheme = localStorage.getItem("theme");
+  if (savedLanguage) setLanguage(savedLanguage);
+  if (savedTheme) setTheme(savedTheme);
+}, []);
 
   // Apply theme to document root
   useEffect(() => {
@@ -85,12 +92,20 @@ export function LanguageProvider({ children }) {
   }, [theme]);
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "en" ? "ur" : "en"));
-  };
+  setLanguage((prev) => {
+    const next = prev === "en" ? "ur" : "en";
+    localStorage.setItem("language", next);
+    return next;
+  });
+};
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
+const toggleTheme = () => {
+  setTheme((prev) => {
+    const next = prev === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    return next;
+  });
+};
 
   const t = translations[language];
 
