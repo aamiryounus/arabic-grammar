@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { LanguageProvider, useLanguage } from "../../../context/LanguageContext";
 import Navbar from "../../../components/Navbar";
 import Link from "next/link";
@@ -20,7 +21,19 @@ const lessonContent = {
     intro: "• I'rab refers to the status of a noun in any Arabic construction.\n• I'rab establishes the position and role of a noun within a sentence or phrase.\n• I'rab is the name given to the finishing of a noun — meaning which vowel mark (fatha, kasra, damma) or tanwin (double fatha, double kasra, double damma) appears on its final letter. Or whether the noun ends with one of the sounds: ūna, īna, ayna.",
     goldenRule:
       "I'rab is the change at the end of a word caused by the factors that govern it. It tells you whether a word is the subject, object, possessive, or something else entirely.",
-    tableTitle: "The Four States of I'rab",
+    tableTitle: "Three States of I'rab for Nouns",
+    recognitionTitle: "How to Identify I'rab",
+    recognitionText: "I'rab is identified in two ways",
+    recognition1Title: "1. By Vowel Mark",
+    recognition1Text: "For singular nouns and broken plurals, I'rab is identified by the vowel on the final letter",
+    recognition1Rules: [
+      "If the final letter has damma (ـُ), the noun is Marfu' (Nominative)",
+      "If the final letter has fatha (ـَ), the noun is Mansub (Accusative)",
+      "If the final letter has kasra (ـِ), the noun is Majrur (Genitive)",
+      "Note: This rule does not apply to the dual (Muthanna).",
+    ],
+    recognition2Title: "2. By Sound",
+    recognition2Text: "For the dual (Muthanna) and sound plurals, I'rab is identified by the sound at the end when pronounced.",
     parts: [
       {
         term: "الرَّفْع",
@@ -92,18 +105,30 @@ const lessonContent = {
   ur: {
     title: "اعراب کا تعارف",
     arabicTitle: "الإعراب",
-    level: "لیول 2 — اعراب",  // ✅
+    level: "لیول 2 — اعراب",
     lessonNumber: "سبق 4",
     intro: "• کسی بھی عربی construction میں اسم کے status کو اعراب کہتے ہیں۔\n• اعراب جملے یا ترکیب میں اسم کا مقام وضع کرتا ہے۔\n• اسم کی Finishing کا نام اعراب ہے۔ مطلب اس کے آخری حرف پر کونسی حرکت (زبر، زیر، پیش)، تنوین (دو زبر، دو زیر، دو پیش) آتی ہے۔ یا اسم اُوۡنَ، اِیۡنَ، اَیۡنِ میں سے کس آواز پر ختم ہوتا ہے۔",
     goldenRule:
       "اعراب وہ تبدیلی ہے جو کسی لفظ کے آخر میں اس کے عاملوں کی وجہ سے آتی ہے — یہ بتاتی ہے کہ لفظ فاعل ہے، مفعول ہے، مضاف الیہ ہے، یا کچھ اور۔",
-    tableTitle: "اعراب کی چار حالتیں",
+    tableTitle: "اسم کیلیے اعراب کی تین حالتیں",
+    recognitionTitle: "اعراب کی پہچان",
+    recognitionText: "اعراب کی پہچان دو طریقے سے کی جاتی ہے",
+    recognition1Title: "1- حرکت سے        ",
+    recognition1Text: "واحد اور جمع مکسر کا اعراب اسم کے آخری حرف کی حرکت سے پہچانا جاتا ہے",
+    recognition1Rules: [
+      "اگر اسم کے آخری حرف پہ پیش ہو تو وہ مرفوع ہوتا ہے",
+      "اگر اسم کے آخری حرف پہ زبر ہو تو وہ منصوب ہوتا ہے",
+      "اگر اسم کے آخری حرف پہ زیر ہو تو وہ مجرور ہوتا ہے",
+      "نوٹ: یہ اصول مثنٰی پر apply نہیں ہوتا۔",
+    ],
+    recognition2Title: "2- آواز سے",
+    recognition2Text: "مثنٰی اور جمع سالم کا اعراب اسم کو pronounce کرتے ہوئے آخر میں جو آواز پیدا ہوتی ہے اس سے پہچانا جاتا ہے۔",
     parts: [
       {
         term: "الرَّفْع",
         name: "رفع",
         meaning: "Nominative",
-        desc: "بنیادی حالت — فاعل کے لیے پیش  کی علامت",
+        desc: "بنیادی حالت — فاعل کے لیے پیش کی علامت",
         color: LEVEL_DARK,
         border: LEVEL_BORDER,
         text: LEVEL_TEXT,
@@ -121,7 +146,7 @@ const lessonContent = {
         term: "الجَرّ",
         name: "جر",
         meaning: "Genitive",
-        desc: "حروف جر اور اضافت کے بعد زیر  کی علامت",
+        desc: "حروف جر اور اضافت کے بعد زیر کی علامت",
         color: LEVEL_DARK,
         border: LEVEL_BORDER,
         text: LEVEL_TEXT,
@@ -130,7 +155,7 @@ const lessonContent = {
         term: "الجَزْم",
         name: "جزم",
         meaning: "Jussive",
-        desc: "صرف افعال کے لیے — امر اور شرط میں سکون  کی علامت",
+        desc: "صرف افعال کے لیے — امر اور شرط میں سکون کی علامت",
         color: LEVEL_DARK,
         border: LEVEL_BORDER,
         text: LEVEL_TEXT,
@@ -198,7 +223,7 @@ function LessonContent() {
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "var(--color-bg)" }}>
-  <Navbar currentLesson={4} />   {/* ← number matches the lesson */}
+      <Navbar currentLesson={4} />
       <div className="animate-fadeInUp" style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 24px" }}>
 
         {/* Breadcrumb */}
@@ -229,8 +254,8 @@ function LessonContent() {
           </h1>
           <div className="quran-arabic" style={{ marginBottom: "12px" }}>{c.arabicTitle}</div>
           <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", color: "var(--color-text-muted)", lineHeight: "1.8", whiteSpace: "pre-line" }}>
-  {c.intro}
-</p>
+            {c.intro}
+          </p>
         </div>
 
         {/* Golden Rule */}
@@ -250,7 +275,7 @@ function LessonContent() {
           </p>
         </div>
 
-        {/* Four States Table */}
+        {/* States Table */}
         <div
           style={{
             backgroundColor: "var(--color-surface)",
@@ -265,31 +290,143 @@ function LessonContent() {
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {c.parts.map((part, i) => (
-              <div
-                key={i}
-                style={{
-                  backgroundColor: part.color,
-                  border: `1px solid ${part.border}`,
-                  borderRadius: "10px",
-                  padding: "16px 20px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "20px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <div className="quran-arabic" style={{ marginBottom: "0", color: part.text, fontSize: "22px" }}>{part.term}</div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: "16px", fontWeight: "600", color: part.text }}>
-                    {part.name} — {part.meaning}
+              <React.Fragment key={i}>
+                {i === 3 && (
+                  <div
+                    className={isUrdu ? "urdu" : ""}
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: "700",
+                      color: LEVEL_BORDER,
+                      marginTop: "8px",
+                      marginBottom: "4px",
+                      textAlign: isUrdu ? "right" : "left",
+                    }}
+                  >
+                    {isUrdu ? "افعال کیلیے اعراب کی حالت" : "State of I'rab for Verbs"}
                   </div>
-                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px" }}>
-                    {part.desc}
+                )}
+                <div
+                  style={{
+                    backgroundColor: part.color,
+                    border: `1px solid ${part.border}`,
+                    borderRadius: "10px",
+                    padding: "16px 20px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "20px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="quran-arabic" style={{ marginBottom: "0", color: part.text, fontSize: "22px" }}>{part.term}</div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: "16px", fontWeight: "600", color: part.text }}>
+                      {part.name} — {part.meaning}
+                    </div>
+                    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px" }}>
+                      {part.desc}
+                    </div>
                   </div>
                 </div>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+
+        {/* Recognition Section */}
+        <div
+          style={{
+            backgroundColor: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
+            borderRadius: "12px",
+            padding: "28px",
+            marginBottom: "32px",
+          }}
+        >
+          <h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "20px", fontWeight: "600", marginBottom: "8px", color: LEVEL_BORDER }}>
+            {c.recognitionTitle}
+          </h2>
+          <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", marginBottom: "20px" }}>
+            {c.recognitionText}
+          </p>
+
+          {/* Method 1 */}
+          <div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "10px", padding: "20px", marginBottom: "16px" }}>
+            <h3 className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", fontWeight: "700", color: LEVEL_TEXT, marginBottom: "10px" }}>
+              {c.recognition1Title}
+            </h3>
+            <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)", marginBottom: "12px" }}>
+              {c.recognition1Text}
+            </p>
+            {c.recognition1Rules.map((rule, i) => (
+              <div key={i} className={isUrdu ? "urdu" : ""} style={{
+                fontSize: "14px",
+                color: i === 3 ? LEVEL_BORDER : "var(--color-text)",
+                padding: "8px 12px",
+                borderRight: isUrdu ? `3px solid ${LEVEL_BORDER}` : "none",
+                borderLeft: !isUrdu ? `3px solid ${LEVEL_BORDER}` : "none",
+                marginBottom: "8px",
+                backgroundColor: "var(--color-bg)",
+                borderRadius: "6px",
+                fontStyle: i === 3 ? "italic" : "normal",
+              }}>
+                {rule}
               </div>
             ))}
           </div>
+
+          {/* Method 2 */}
+          <div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "10px", padding: "20px", marginBottom: "20px" }}>
+            <h3 className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", fontWeight: "700", color: LEVEL_TEXT, marginBottom: "10px" }}>
+              {c.recognition2Title}
+            </h3>
+            <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)" }}>
+              {c.recognition2Text}
+            </p>
+          </div>
+
+          {/* Sound Table */}
+<div style={{ overflowX: "auto" }}>
+  <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "center", direction: isUrdu ? "rtl" : "ltr" }}>
+    <thead>
+      <tr style={{ backgroundColor: LEVEL_DARK }}>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "عدد" : "Type"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "جنس" : "Gender"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "رفع کی آواز" : "Raf' Sound"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "نصب کی آواز" : "Nasb Sound"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "جرّ کی آواز" : "Jarr Sound"}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className={isUrdu ? "urdu" : ""} rowSpan={2} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600" }}>{isUrdu ? "مثنٰی" : "Dual"}</td>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مذکر" : "Masc."}</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آنِ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
+      </tr>
+      <tr style={{ backgroundColor: "var(--color-surface2)" }}>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مؤنث" : "Fem."}</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آنِ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
+      </tr>
+      <tr>
+        <td className={isUrdu ? "urdu" : ""} rowSpan={2} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600" }}>{isUrdu ? "جمع سالم" : "Plural"}</td>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مذکر" : "Masc."}</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اُوۡنَ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اِيۡنَ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اِيۡنَ</td>
+      </tr>
+      <tr style={{ backgroundColor: "var(--color-surface2)" }}>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مؤنث" : "Fem."}</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آتٌ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آتٍ</td>
+        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آتٍ</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
         </div>
 
         {/* Example 1 */}

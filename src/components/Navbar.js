@@ -7,7 +7,7 @@ import Link from "next/link";
 const lessons = [
   {
     level: "Level 1",
-    levelUr: "سطح ۱",
+    levelUr: "لیول 1",
     title: "Foundations",
     titleUr: "بنیادیات",
     color: "#085041",
@@ -21,7 +21,7 @@ const lessons = [
   },
   {
     level: "Level 2",
-    levelUr: "سطح ۲",
+    levelUr: "لیول 2",
     title: "Case Endings",
     titleUr: "اعراب",
     color: "#185FA5",
@@ -37,7 +37,7 @@ const lessons = [
   },
   {
     level: "Level 3",
-    levelUr: "سطح ۳",
+    levelUr: "لیول 3",
     title: "Verbs & Sentences",
     titleUr: "فعل اور جملے",
     color: "#633806",
@@ -53,7 +53,7 @@ const lessons = [
   },
   {
     level: "Level 4",
-    levelUr: "سطح ۴",
+    levelUr: "لیول 4",
     title: "Verb Morphology",
     titleUr: "صرف",
     color: "#3c3489",
@@ -68,7 +68,7 @@ const lessons = [
   },
   {
     level: "Level 5",
-    levelUr: "سطح ۵",
+    levelUr: "لیول 5",
     title: "Advanced Quranic Analysis",
     titleUr: "قرآنی تجزیہ",
     color: "#4a1b0c",

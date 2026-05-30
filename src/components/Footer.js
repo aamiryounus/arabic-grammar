@@ -52,7 +52,7 @@ export default function Footer() {
             className={isUrdu ? "urdu" : ""}
             style={{ fontSize: "14px", fontWeight: "600", color: "var(--color-text)", marginBottom: "12px" }}
           >
-            {isUrdu ? "سطحیں" : "Levels"}
+            {isUrdu ? "لیولز" : "Levels"}
           </h4>
           <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۱ — بنیادیات" : "Level 1 — Foundations"}</div>
           <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۲ — فعل اور جملے" : "Level 2 — Verbs & Sentences"}</div>

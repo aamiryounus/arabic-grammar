@@ -173,6 +173,7 @@ function HomeContent() {
             display: "flex",
             alignItems: "center",
             gap: "20px",
+flexDirection: isUrdu ? "row-reverse" : "row",
             cursor: "pointer",
             textDecoration: "none",
             color: "var(--color-text)",
@@ -193,7 +194,7 @@ function HomeContent() {
               textAlign: "center",
             }}
           >
-            ١
+            1
           </div>
           <div style={{ flex: 1 }}>
             <div
@@ -224,6 +225,7 @@ function HomeContent() {
             display: "flex",
             alignItems: "center",
             gap: "20px",
+flexDirection: isUrdu ? "row-reverse" : "row",
             cursor: "pointer",
             textDecoration: "none",
             color: "var(--color-text)",
@@ -245,7 +247,7 @@ function HomeContent() {
               textAlign: "center",
             }}
           >
-            ٢
+            2
           </div>
           <div style={{ flex: 1 }}>
             <div
@@ -275,6 +277,7 @@ function HomeContent() {
     display: "flex",
     alignItems: "center",
     gap: "20px",
+flexDirection: isUrdu ? "row-reverse" : "row",
     cursor: "pointer",
     textDecoration: "none",
     color: "var(--color-text)",
@@ -296,7 +299,7 @@ function HomeContent() {
       textAlign: "center",
     }}
   >
-    ٣
+    3
   </div>
   <div style={{ flex: 1 }}>
     <div
