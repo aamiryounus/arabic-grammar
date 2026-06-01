@@ -485,23 +485,39 @@ style={{ marginBottom: "12px" }}
           >
             {c.backHome}
           </Link>
-         <Link
-  href="/lessons/1/quiz"
-  style={{
-    backgroundColor: "var(--color-primary)",
-    border: "none",
-    borderRadius: "8px",
-    padding: "12px 24px",
-    color: "#0f1117",
-    fontSize: "15px",
-    fontWeight: "700",
-    cursor: "pointer",
-    textDecoration: "none",
-    display: "inline-block",
-  }}
->
-  {isUrdu ? "امتحان دیں ←" : "Take Quiz →"}
-</Link>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <Link
+              href="/lessons/2"
+              style={{
+                backgroundColor: "var(--color-surface)",
+                border: "1px solid var(--color-border)",
+                borderRadius: "8px",
+                padding: "12px 24px",
+                color: "var(--color-text-muted)",
+                textDecoration: "none",
+                fontSize: "15px",
+              }}
+            >
+              {isUrdu ? "کوئز چھوڑیں ←" : "Skip Quiz →"}
+            </Link>
+            <Link
+              href="/lessons/1/quiz"
+              style={{
+                backgroundColor: "var(--color-primary)",
+                border: "none",
+                borderRadius: "8px",
+                padding: "12px 24px",
+                color: "#0f1117",
+                fontSize: "15px",
+                fontWeight: "700",
+                cursor: "pointer",
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              {isUrdu ? "کوئز دیں ←" : "Take Quiz →"}
+            </Link>
+          </div>
         </div>
 
       </div>

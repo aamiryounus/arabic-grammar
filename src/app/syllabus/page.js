@@ -60,7 +60,7 @@ const syllabusData = {
           },
         ],
       },
-     {
+      {
         level: "Level 2",
         title: "Case Endings",
         color: "#0c447c",
@@ -69,10 +69,10 @@ const syllabusData = {
         badge: "Intermediate",
         sections: [
           { id: 4, title: "Introduction to I'rab", arabic: "الإعراب", desc: "The declension system", ready: true },
-          { id: 5, title: "Raf' — Nominative Case", arabic: "الرفع", desc: "When words take damma", ready: true },
-          { id: 6, title: "Nasb — Accusative Case", arabic: "النصب", desc: "When words take fatha", ready: true },
-          { id: 7, title: "Jarr — Genitive Case", arabic: "الجر", desc: "When words take kasra", ready: true },
-          { id: 8, title: "Jazm — Jussive Case", arabic: "الجزم", desc: "For verbs only", ready: true },
+          { id: 5, title: "All Reasons for Raf' (Nominative Case)", arabic: "أسباب الرَّفْع", desc: "Every grammatical reason a noun takes damma", ready: true },
+          { id: 6, title: "All Reasons for Nasb (Accusative Case)", arabic: "أسباب النَّصْب", desc: "Every grammatical reason a noun takes fatha", ready: true },
+          { id: 7, title: "All Reasons for Jarr (Genitive Case)", arabic: "أسباب الجَرّ", desc: "Every grammatical reason a noun takes kasra", ready: true },
+          { id: 8, title: "All Reasons for Jazm (Jussive Case)", arabic: "أسباب الجَزْم", desc: "Every grammatical reason a verb takes sukoon", ready: true },
         ],
       },
       {
@@ -177,11 +177,11 @@ const syllabusData = {
         text: "#b5d4f4",
         badge: "متوسط",
         sections: [
-          { id: 4, title: "اعراب کا تعارف", arabic: "الإعراب", desc: "عربی کا حرکات کا نظام", ready: false },
-          { id: 5, title: "رفع", arabic: "الرفع", desc: "جب الفاظ پر پیش آتی ہے", ready: false },
-          { id: 6, title: "نصب", arabic: "النصب", desc: "جب الفاظ پر زبر آتی ہے", ready: false },
-          { id: 7, title: "جر", arabic: "الجر", desc: "جب الفاظ پر زیر آتی ہے", ready: false },
-          { id: 8, title: "جزم", arabic: "الجزم", desc: "صرف افعال کے لیے", ready: false },
+          { id: 4, title: "اعراب کا تعارف", arabic: "الإعراب", desc: "عربی کا حرکات کا نظام", ready: true },
+          { id: 5, title: "اسم کے رفع ہونے کی  وجوہات", arabic: "أسباب الرَّفْع", desc: "ہر وہ گرامری وجہ جس سے اسم پر پیش آتی ہے", ready: true },
+          { id: 6, title: "اسم کے نصب ہونے کی  وجوہات", arabic: "أسباب النَّصْب", desc: "ہر وہ گرامری وجہ جس سے اسم پر زبر آتی ہے", ready: true },
+          { id: 7, title: "اسم کے جر ہونے کی  وجوہات", arabic: "أسباب الجَرّ", desc: "ہر وہ گرامری وجہ جس سے اسم پر زیر آتی ہے", ready: true },
+          { id: 8, title: "فعل کے جزم ہونے کی  وجوہات", arabic: "أسباب الجَزْم", desc: "ہر وہ گرامری وجہ جس سے فعل پر سکون آتا ہے", ready: true },
         ],
       },
       {

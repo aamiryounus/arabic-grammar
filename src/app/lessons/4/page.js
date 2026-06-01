@@ -24,7 +24,7 @@ const lessonContent = {
     tableTitle: "Three States of I'rab for Nouns",
     recognitionTitle: "How to Identify I'rab",
     recognitionText: "I'rab is identified in two ways",
-    recognition1Title: "1. By Vowel Mark",
+    recognition1Title: "1. By Vowel Mark (Harkat)",
     recognition1Text: "For singular nouns and broken plurals, I'rab is identified by the vowel on the final letter",
     recognition1Rules: [
       "If the final letter has damma (ـُ), the noun is Marfu' (Nominative)",
@@ -32,8 +32,19 @@ const lessonContent = {
       "If the final letter has kasra (ـِ), the noun is Majrur (Genitive)",
       "Note: This rule does not apply to the dual (Muthanna).",
     ],
+    exceptionNote: "There are two cases in Accusative (Nasb) where the double fatha does NOT come with an alif:",
+    exceptionCase1: "A singular noun ending in round ta (ة)",
+    exceptionCase2: "A noun where alif and hamza (اء) come together",
+    exceptionRows: [
+      { label: "Singular with ة", raf: "مُسْلِمَةٌ", nasb: "مُسْلِمَةً", jarr: "مُسْلِمَةٍ" },
+      { label: "Singular with ة", raf: "جَنَّةٌ", nasb: "جَنَّةً", jarr: "جَنَّةٍ" },
+      { label: "Singular with ة", raf: "اِمْرَأَةٌ", nasb: "اِمْرَأَةً", jarr: "اِمْرَأَةٍ" },
+      { label: "Singular with ا ء", raf: "مَاءٌ", nasb: "مَاءً", jarr: "مَاءٍ" },
+      { label: "Singular with ا ء", raf: "جَزَاءٌ", nasb: "جَزَاءً", jarr: "جَزَاءٍ" },
+      { label: "Singular with ا ء", raf: "سَمَاءٌ", nasb: "سَمَاءً", jarr: "سَمَاءٍ" },
+    ],
     recognition2Title: "2. By Sound",
-    recognition2Text: "For the dual (Muthanna) and sound plurals, I'rab is identified by the sound at the end when pronounced.",
+    recognition2Text: "For the dual (Muthanna) and plurals, I'rab is identified by the sound at the end when pronounced.",
     parts: [
       {
         term: "الرَّفْع",
@@ -99,30 +110,42 @@ const lessonContent = {
     takeawayText:
       "I'rab is the grammar engine of Arabic. Every noun and verb has a state — Raf', Nasb, Jarr, or Jazm — determined by its role in the sentence. Learning to spot and name these endings is the core skill of the next four lessons.",
     backHome: "← Back to Home",
-    prevLesson: "← Lesson 3",
-    nextLesson: "Lesson 5 →",
+    prevLesson: "← Previous Lesson 3",
+    nextLesson: "Next Lesson 5 →",
   },
   ur: {
     title: "اعراب کا تعارف",
     arabicTitle: "الإعراب",
     level: "لیول 2 — اعراب",
     lessonNumber: "سبق 4",
-    intro: "• کسی بھی عربی construction میں اسم کے status کو اعراب کہتے ہیں۔\n• اعراب جملے یا ترکیب میں اسم کا مقام وضع کرتا ہے۔\n• اسم کی Finishing کا نام اعراب ہے۔ مطلب اس کے آخری حرف پر کونسی حرکت (زبر، زیر، پیش)، تنوین (دو زبر، دو زیر، دو پیش) آتی ہے۔ یا اسم اُوۡنَ، اِیۡنَ، اَیۡنِ میں سے کس آواز پر ختم ہوتا ہے۔",
+    intro: "• کسی بھی عربی construction میں اسم کے status کو اعراب کہتے ہیں۔\n• اعراب جملے یا ترکیب میں اسم کا مقام وضع کرتا ہے۔\n• اسم کی Finishing کا نام اعراب ہے۔ مطلب اس کے آخری حرف پر کونسی حرکت (زبر، زیر، پیش)، تنوین (دو زبر، دو زیر، دو پیش) آتی ہے۔ یا اسم اُوۡنَ، اِیۡنَ، آنِ، اَیۡنِ، آتٌ، آتٍ میں سے کس آواز پر ختم ہوتا ہے۔",
     goldenRule:
       "اعراب وہ تبدیلی ہے جو کسی لفظ کے آخر میں اس کے عاملوں کی وجہ سے آتی ہے — یہ بتاتی ہے کہ لفظ فاعل ہے، مفعول ہے، مضاف الیہ ہے، یا کچھ اور۔",
     tableTitle: "اسم کیلیے اعراب کی تین حالتیں",
     recognitionTitle: "اعراب کی پہچان",
     recognitionText: "اعراب کی پہچان دو طریقے سے کی جاتی ہے",
     recognition1Title: "1- حرکت سے        ",
-    recognition1Text: "واحد اور جمع مکسر کا اعراب اسم کے آخری حرف کی حرکت سے پہچانا جاتا ہے",
+    recognition1Text: "واحد اسم مذكر/ مؤنث کا اعراب حرکات کے ساتھ پہچانا جاتا ہے۔",
     recognition1Rules: [
-      "اگر اسم کے آخری حرف پہ پیش ہو تو وہ مرفوع ہوتا ہے",
-      "اگر اسم کے آخری حرف پہ زبر ہو تو وہ منصوب ہوتا ہے",
-      "اگر اسم کے آخری حرف پہ زیر ہو تو وہ مجرور ہوتا ہے",
-      "نوٹ: یہ اصول مثنٰی پر apply نہیں ہوتا۔",
+      "مرفوع:  آخری حرف پہ دو پیش ہوں گے۔",
+      "منصوب:  آخری حرف پہ دو زبر ہوں گے اور اس کے ساتھ الف آئے گا۔",
+      "مجرور:  آخری حرف پہ دو زیر ہوں گے۔",
+      "نوٹ: یہ اصول مثنٰی اور جمع سالم پر apply نہیں ہوتا۔",
+    ],
+    
+    exceptionNote: "منصوب میں دو کیسز ایسے ہیں جب دو زبر کے ساتھ الف نہیں آتا",
+    exceptionCase1: "واحد اسم گول تا \"ۃ\" والا ہو",
+    exceptionCase2: "اسم میں \"الف ہمزہ\" اکٹھے ہو جائیں",
+    exceptionRows: [
+      { label: "واحد  (  ۃ  )   کے ساتھ", raf: "مُسْلِمَةٌ", nasb: "مُسْلِمَةً", jarr: "مُسْلِمَةٍ" },
+      { label: "واحد  (  ۃ  )   کے ساتھ", raf: "جَنَّةٌ", nasb: "جَنَّةً", jarr: "جَنَّةٍ" },
+      { label: "واحد ( ۃ ) کے ساتھ", raf: "اِمْرَأَةٌ", nasb: "اِمْرَأَةً", jarr: "اِمْرَأَةٍ" },
+      { label: "واحد (  اء  ) کے ساتھ", raf: "مَاءٌ", nasb: "مَاءً", jarr: "مَاءٍ" },
+       { label: "واحد (  اء  ) کے ساتھ", raf: "جَزَاءٌ", nasb: "جَزَاءً", jarr: "جَزَاءٍ" },
+        { label: "واحد (  اء  ) کے ساتھ", raf: "سَمَاءٌ", nasb: "سَمَاءً", jarr: "سَمَاءٍ" },
     ],
     recognition2Title: "2- آواز سے",
-    recognition2Text: "مثنٰی اور جمع سالم کا اعراب اسم کو pronounce کرتے ہوئے آخر میں جو آواز پیدا ہوتی ہے اس سے پہچانا جاتا ہے۔",
+    recognition2Text: "مثنٰی اور جمع سالم کی حالت میں اسم کو pronounce  کرتے ہوئے آخر میں جو آواز پیدا ہوتی ہے اس سے اسم کا اعراب پہچانا جاتا ہے۔",
     parts: [
       {
         term: "الرَّفْع",
@@ -137,7 +160,7 @@ const lessonContent = {
         term: "النَّصْب",
         name: "نصب",
         meaning: "Accusative",
-        desc: "مفعول اور تکملے کے لیے زبر کی علامت",
+        desc: "مفعول اور تَكٔمِلَہ(مفعول بہ،تمیز،حال) کے لیے زبر کی علامت",
         color: LEVEL_DARK,
         border: LEVEL_BORDER,
         text: LEVEL_TEXT,
@@ -188,8 +211,8 @@ const lessonContent = {
     takeawayText:
       "اعراب عربی گرامر کا انجن ہے۔ ہر اسم اور فعل کی ایک حالت ہوتی ہے — رفع، نصب، جر، یا جزم — جو جملے میں اس کے کردار سے طے ہوتی ہے۔ اگلے چار اسباق میں انہی حالتوں کو پہچاننا اور نام لینا ہی بنیادی مہارت ہے۔",
     backHome: "← گھر واپس",
-    prevLesson: "← پچھلا سبق",
-    nextLesson: "اگلا سبق →",
+    prevLesson: "← پچھلا سبق 3",
+    nextLesson: "اگلا سبق 5 →",
   },
 };
 
@@ -307,27 +330,28 @@ function LessonContent() {
                   </div>
                 )}
                 <div
-                  style={{
-                    backgroundColor: part.color,
-                    border: `1px solid ${part.border}`,
-                    borderRadius: "10px",
-                    padding: "16px 20px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "20px",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <div className="quran-arabic" style={{ marginBottom: "0", color: part.text, fontSize: "22px" }}>{part.term}</div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontSize: "16px", fontWeight: "600", color: part.text }}>
-                      {part.name} — {part.meaning}
-                    </div>
-                    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px" }}>
-                      {part.desc}
-                    </div>
-                  </div>
-                </div>
+  style={{
+    backgroundColor: part.color,
+    border: `1px solid ${part.border}`,
+    borderRadius: "10px",
+    padding: "16px 20px",
+    display: "flex",
+    alignItems: "center",
+    gap: "20px",
+    flexWrap: "wrap",
+    flexDirection: isUrdu ? "row-reverse" : "row",
+  }}
+>
+  
+  <div style={{ flex: 1 }}>
+    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", fontWeight: "600", color: part.text, textAlign: isUrdu ? "right" : "left" }}>
+  {part.name}
+</div>
+    <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px", textAlign: isUrdu ? "right" : "left" }}>
+      {part.desc}
+    </div>
+  </div>
+</div>
               </React.Fragment>
             ))}
           </div>
@@ -368,13 +392,77 @@ function LessonContent() {
                 marginBottom: "8px",
                 backgroundColor: "var(--color-bg)",
                 borderRadius: "6px",
-                fontStyle: i === 3 ? "italic" : "normal",
-              }}>
+                 }}>
                 {rule}
               </div>
             ))}
           </div>
+          {/* Vowel Mark Table */}
+          <div style={{ overflowX: "auto", marginBottom: "16px" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "center", direction: isUrdu ? "rtl" : "ltr" }}>
+              <thead>
+                <tr style={{ backgroundColor: LEVEL_DARK }}>
+                  <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}></th>
+                  <th className={isUrdu ? "quran-arabic" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: isUrdu ? "20px" : "14px" }}>{isUrdu ? "رَفْع" : "Raf' (Nominative)"}</th>
+                  <th className={isUrdu ? "quran-arabic" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: isUrdu ? "20px" : "14px" }}>{isUrdu ? "نَصْب" : "Nasb (Accusative)"}</th>
+                  <th className={isUrdu ? "quran-arabic" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: isUrdu ? "20px" : "14px" }}>{isUrdu ? "جَرّ" : "Jarr (Genitive)"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: isUrdu ? "واحد مذکر" : "Sing. Masc.", raf: "مُحَمَّدٌ", nasb: "مُحَمَّدًا", jarr: "مُحَمَّدٍ" },
+                  { label: isUrdu ? "واحد مؤنث" : "Sing. Fem.", raf: "بِنْتٌ", nasb: "بِنْتًا", jarr: "بِنْتٍ" },
+                  { label: isUrdu ? "واحد مذکر" : "Sing. Masc.", raf: "مُسْلِمٌ", nasb: "مُسْلِمًا", jarr: "مُسْلِمٍ" },
+                  { label: isUrdu ? "واحد مذکر" : "Sing. Masc.", raf: "كَافِرٌ", nasb: "كَافِرًا", jarr: "كَافِرٍ" },
+                  { label: isUrdu ? "واحد مذکر" : "Sing. Masc.", raf: "زَيْدٌ", nasb: "زَيْدًا", jarr: "زَيْدٍ" },
+                  { label: isUrdu ? "واحد مذکر" : "Sing. Masc.", raf: "شَيْءٌٌ", nasb: "شَيْئًا", jarr: "شَيْءٍ" },
+                  { label: isUrdu ? "واحد مذکر" : "Sing. Masc.", raf: "سُؤْءٌ", nasb: "سُوءًا", jarr: "سُوءٍ" },
+                ].map((row, i) => (
+                  <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "var(--color-surface)" : "var(--color-surface2)" }}>
+                    <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600", fontSize: "15px" }}>{row.label}</td>
+                    <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>{row.raf}</td>
+                    <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>{row.nasb}</td>
+                    <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>{row.jarr}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+{/* Exception Note & Table */}
+          <div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "10px", padding: "16px 20px", marginBottom: "16px" }}>
+            <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text)", textAlign: isUrdu ? "right" : "left", marginBottom: "12px" }}>
+              {c.exceptionNote}
+            </p>
+            <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)", textAlign: isUrdu ? "right" : "left", marginBottom: "6px" }}>
+              {c.exceptionCase1}
+            </p>
+            <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)", textAlign: isUrdu ? "right" : "left" }}>
+              {c.exceptionCase2}
+            </p>
+          </div>
 
+          <div style={{ overflowX: "auto", marginBottom: "16px" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "center", direction: isUrdu ? "rtl" : "ltr" }}>
+              <thead>
+                <tr style={{ backgroundColor: LEVEL_DARK }}>
+                  <th style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}></th>
+                  <th className={isUrdu ? "quran-arabic" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: isUrdu ? "20px" : "14px" }}>{isUrdu ? "رَفْع" : "Raf' (Nominative)"}</th>
+                  <th className={isUrdu ? "quran-arabic" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: isUrdu ? "20px" : "14px" }}>{isUrdu ? "نَصْب" : "Nasb (Accusative)"}</th>
+                  <th className={isUrdu ? "quran-arabic" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: isUrdu ? "20px" : "14px" }}>{isUrdu ? "جَرّ" : "Jarr (Genitive)"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {c.exceptionRows.map((row, i) => (
+                  <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "var(--color-surface)" : "var(--color-surface2)" }}>
+                    <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600", fontSize: "15px" }}>{row.label}</td>
+                    <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>{row.raf}</td>
+                    <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>{row.nasb}</td>
+                    <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>{row.jarr}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           {/* Method 2 */}
           <div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "10px", padding: "20px", marginBottom: "20px" }}>
             <h3 className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", fontWeight: "700", color: LEVEL_TEXT, marginBottom: "10px" }}>
@@ -398,32 +486,113 @@ function LessonContent() {
       </tr>
     </thead>
     <tbody>
+      {/* Muthanna — single row, masc/fem combined */}
       <tr>
-        <td className={isUrdu ? "urdu" : ""} rowSpan={2} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600" }}>{isUrdu ? "مثنٰی" : "Dual"}</td>
-        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مذکر" : "Masc."}</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آنِ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600" }}>{isUrdu ? "مثنٰی" : "Dual"}</td>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مذکر / مؤنث" : "Masc. / Fem."}</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>آنِ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>اَيۡنِ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>اَيۡنِ</td>
       </tr>
+      {/* Jama' Salim Masculine */}
       <tr style={{ backgroundColor: "var(--color-surface2)" }}>
-        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مؤنث" : "Fem."}</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آنِ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اَيۡنِ</td>
+        <td className={isUrdu ? "urdu" : ""} rowSpan={2} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600" }}>{isUrdu ? "جمع سالم" : "Sound Plural"}</td>
+        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مذکر" : "Masc."}</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>اُوۡنَ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>اِيۡنَ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>اِيۡنَ</td>
       </tr>
+      {/* Jama' Salim Feminine */}
       <tr>
-        <td className={isUrdu ? "urdu" : ""} rowSpan={2} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600" }}>{isUrdu ? "جمع سالم" : "Plural"}</td>
-        <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مذکر" : "Masc."}</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اُوۡنَ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اِيۡنَ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>اِيۡنَ</td>
-      </tr>
-      <tr style={{ backgroundColor: "var(--color-surface2)" }}>
         <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)" }}>{isUrdu ? "مؤنث" : "Fem."}</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آتٌ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آتٍ</td>
-        <td className="arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "18px" }}>آتٍ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>آتٌ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>آتٍ</td>
+        <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "22px" }}>آتٍ</td>
       </tr>
+    </tbody>
+  </table>
+</div>
+{/* Practice Table — Full Forms */}
+<div style={{ overflowX: "auto", marginTop: "24px" }}>
+  <h3 className={isUrdu ? "urdu" : ""} style={{ fontSize: "16px", fontWeight: "700", color: LEVEL_TEXT, marginBottom: "12px" }}>
+    {isUrdu ? "مشق — مکمل اعراب کی جدول" : "Practice — Complete I'rab Table"}
+  </h3>
+  <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "center", direction: isUrdu ? "rtl" : "ltr" }}>
+    <thead>
+      <tr style={{ backgroundColor: LEVEL_DARK }}>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "عدد / جنس" : "Type / Gender"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "اعراب کی پہچان" : "I'rab By"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "رفع" : "Raf'"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "نصب" : "Nasb"}</th>
+        <th className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", color: LEVEL_TEXT, border: `1px solid ${LEVEL_BORDER}`, fontSize: "14px" }}>{isUrdu ? "جر" : "Jarr"}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        // مسلم
+        { type: isUrdu ? "واحد (مذکر)" : "Sing. Masc.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "مُسْلِمٌ", nasb: "مُسْلِمًا", jarr: "مُسْلِمٍ" },
+        { type: isUrdu ? "ثنّی (مذکر)" : "Dual Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُسْلِمَانِ", nasb: "مُسْلِمَيْنِ", jarr: "مُسْلِمَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مذکر)" : "Pl. Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُسْلِمُوْنَ", nasb: "مُسْلِمِيْنَ", jarr: "مُسْلِمِيْنَ" },
+        { type: isUrdu ? "واحد (مؤنث)" : "Sing. Fem.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "مُسْلِمَةٌ", nasb: "مُسْلِمَةً", jarr: "مُسْلِمَةٍ" },
+        { type: isUrdu ? "ثنّی (مؤنث)" : "Dual Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُسْلِمَتَانِ", nasb: "مُسْلِمَتَيْنِ", jarr: "مُسْلِمَتَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مؤنث)" : "Pl. Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُسْلِمَاتٌ", nasb: "مُسْلِمَاتٍ", jarr: "مُسْلِمَاتٍ" },
+        // مؤمن
+        { type: isUrdu ? "واحد (مذکر)" : "Sing. Masc.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "مُؤْمِنٌ", nasb: "مُؤْمِنًا", jarr: "مُؤْمِنٍ" },
+        { type: isUrdu ? "ثنّی (مذکر)" : "Dual Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُؤْمِنَانِ", nasb: "مُؤْمِنَيْنِ", jarr: "مُؤْمِنَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مذکر)" : "Pl. Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُؤْمِنُوْنَ", nasb: "مُؤْمِنِيْنَ", jarr: "مُؤْمِنِيْنَ" },
+        { type: isUrdu ? "واحد (مؤنث)" : "Sing. Fem.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "مُؤْمِنَةٌ", nasb: "مُؤْمِنَةً", jarr: "مُؤْمِنَةٍ" },
+        { type: isUrdu ? "ثنّی (مؤنث)" : "Dual Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُؤْمِنَتَانِ", nasb: "مُؤْمِنَتَيْنِ", jarr: "مُؤْمِنَتَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مؤنث)" : "Pl. Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "مُؤْمِنَاتٌ", nasb: "مُؤْمِنَاتٍ", jarr: "مُؤْمِنَاتٍ" },
+        // صالح
+        { type: isUrdu ? "واحد (مذکر)" : "Sing. Masc.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "صَالِحٌ", nasb: "صَالِحًا", jarr: "صَالِحٍ" },
+        { type: isUrdu ? "ثنّی (مذکر)" : "Dual Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَالِحَانِ", nasb: "صَالِحَيْنِ", jarr: "صَالِحَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مذکر)" : "Pl. Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَالِحُوْنَ", nasb: "صَالِحِيْنَ", jarr: "صَالِحِيْنَ" },
+        { type: isUrdu ? "واحد (مؤنث)" : "Sing. Fem.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "صَالِحَةٌ", nasb: "صَالِحَةً", jarr: "صَالِحَةٍ" },
+        { type: isUrdu ? "ثنّی (مؤنث)" : "Dual Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَالِحَتَانِ", nasb: "صَالِحَتَيْنِ", jarr: "صَالِحَتَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مؤنث)" : "Pl. Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَالِحَاتٌ", nasb: "صَالِحَاتٍ", jarr: "صَالِحَاتٍ" },
+        // صابر
+        { type: isUrdu ? "واحد (مذکر)" : "Sing. Masc.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "صَابِرٌ", nasb: "صَابِرًا", jarr: "صَابِرٍ" },
+        { type: isUrdu ? "ثنّی (مذکر)" : "Dual Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَابِرَانِ", nasb: "صَابِرَيْنِ", jarr: "صَابِرَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مذکر)" : "Pl. Masc.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَابِرُوْنَ", nasb: "صَابِرِيْنَ", jarr: "صَابِرِيْنَ" },
+        { type: isUrdu ? "واحد (مؤنث)" : "Sing. Fem.", by: isUrdu ? "حرکت سے" : "Vowel", raf: "صَابِرَةٌ", nasb: "صَابِرَةً", jarr: "صَابِرَةٍ" },
+        { type: isUrdu ? "ثنّی (مؤنث)" : "Dual Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَابِرَتَانِ", nasb: "صَابِرَتَيْنِ", jarr: "صَابِرَتَيْنِ" },
+        { type: isUrdu ? "جمع سالم (مؤنث)" : "Pl. Fem.", by: isUrdu ? "آواز سے" : "Sound", raf: "صَابِرَاتٌ", nasb: "صَابِرَاتٍ", jarr: "صَابِرَاتٍ" },
+      ].map((row, i) => {
+        // Add a separator row before each new word group (every 6 rows after the first)
+        const isGroupStart = i > 0 && i % 6 === 0;
+        const wordLabels = isUrdu
+          ? ["", "", "", "", "", "", "مُؤْمِن", "", "", "", "", "", "صَالِح", "", "", "", "", "", "صَابِر"]
+          : ["", "", "", "", "", "", "مُؤْمِن", "", "", "", "", "", "صَالِح", "", "", "", "", "", "صَابِر"];
+        return (
+          <React.Fragment key={i}>
+            {isGroupStart && (
+              <tr>
+                <td
+                  colSpan={5}
+                  className="quran-arabic"
+                  style={{
+                    padding: "8px 16px",
+                    backgroundColor: LEVEL_COLOR,
+                    color: LEVEL_LIGHT,
+                    fontSize: "20px",
+                    border: `1px solid ${LEVEL_BORDER}`,
+                    textAlign: "center",
+                  }}
+                >
+                  {[null, null, null, null, null, null, "مُؤْمِن", null, null, null, null, null, "صَالِح", null, null, null, null, null, "صَابِر"][i]}
+                </td>
+              </tr>
+            )}
+            <tr style={{ backgroundColor: i % 2 === 0 ? "var(--color-surface)" : "var(--color-surface2)" }}>
+              <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontWeight: "600", fontSize: "14px" }}>{row.type}</td>
+              <td className={isUrdu ? "urdu" : ""} style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text-muted)", fontSize: "13px" }}>{row.by}</td>
+              <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "20px" }}>{row.raf}</td>
+              <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "20px" }}>{row.nasb}</td>
+              <td className="quran-arabic" style={{ padding: "10px 16px", border: `1px solid ${LEVEL_BORDER}`, color: "var(--color-text)", fontSize: "20px" }}>{row.jarr}</td>
+            </tr>
+          </React.Fragment>
+        );
+      })}
     </tbody>
   </table>
 </div>

@@ -337,8 +337,8 @@ const lessonContent = {
     takeawayText:
       "حروف عربی گرامر کی بنیادی کڑی ہیں۔ اگرچہ یہ اکیلے بے معنی ہیں، لیکن یہ جملوں کے معنی کو مکمل طور پر بدل دیتے ہیں۔ حروف پر عبور قرآن کی ہر آیت سمجھنے کے لیے ضروری ہے۔",
     backHome: "← گھر واپس",
-    prevLesson: "← سبق ۱",
-    nextLesson: "سبق ۳ →",
+    prevLesson: "← پچھلا سبق 1",
+    nextLesson: "اگلا سبق 3 →",
   },
 };
 function AlphabetTable({ letters, borderColor }) {
@@ -928,20 +928,22 @@ function LessonContent() {
           >
             {c.backHome}
           </Link>
-          <button
-            style={{
-              backgroundColor: "var(--color-primary)",
-              border: "none",
-              borderRadius: "8px",
-              padding: "12px 24px",
-              color: "#0f1117",
-              fontSize: "15px",
-              fontWeight: "700",
-              cursor: "pointer",
-            }}
-          >
-            {c.nextLesson}
-          </button>
+          <Link
+  href="/lessons/3"
+  style={{
+    backgroundColor: "var(--color-primary)",
+    border: "none",
+    borderRadius: "8px",
+    padding: "12px 24px",
+    color: "#0f1117",
+    fontSize: "15px",
+    fontWeight: "700",
+    cursor: "pointer",
+    textDecoration: "none",
+  }}
+>
+  {c.nextLesson}
+</Link>
         </div>
 
       </div>

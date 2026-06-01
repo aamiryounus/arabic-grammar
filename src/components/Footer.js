@@ -54,11 +54,11 @@ export default function Footer() {
           >
             {isUrdu ? "لیولز" : "Levels"}
           </h4>
-          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۱ — بنیادیات" : "Level 1 — Foundations"}</div>
-          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۲ — فعل اور جملے" : "Level 2 — Verbs & Sentences"}</div>
-          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۳ — اعراب" : "Level 3 — Case Endings"}</div>
-          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۴ — صرف" : "Level 4 — Verb Morphology"}</div>
-          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "سطح ۵ — قرآنی تجزیہ" : "Level 5 — Quranic Analysis"}</div>
+          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "لیول 1 — بنیادیات" : "Level 1 — Foundations"}</div>
+          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "لیول 2 — فعل اور جملے" : "Level 2 — Verbs & Sentences"}</div>
+          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "لیول 3 — اعراب" : "Level 3 — Case Endings"}</div>
+          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "لیول 4 — صرف" : "Level 4 — Verb Morphology"}</div>
+          <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-text-muted)", marginBottom: "6px" }}>{isUrdu ? "لیول 5 — قرآنی تجزیہ" : "Level 5 — Quranic Analysis"}</div>
         </div>
 
         {/* Quick Links Column */}
@@ -97,10 +97,10 @@ export default function Footer() {
           className={isUrdu ? "urdu" : ""}
           style={{ fontSize: "12px", color: "var(--color-text-muted)" }}
         >
-          {isUrdu ? "© ۲۰۲۵ قرآنی عربی اکیڈمی" : "© 2025 Quranic Arabic Academy — Built with Next.js"}
+          {isUrdu ? "© ۲۰۲۵ قرآنی عربی گرامر" : "© 2025 Quranic Arabic Academy — Built with Next.js"}
         </p>
         <p style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>
-          {isUrdu ? "عامر یونس کی جانب سے ❤️" : "Made with ❤️ by Aamir Younus"}
+          {isUrdu ? "عامر یونس کی جانب سے " : "Made with  by Aamir Younus"}
         </p>
       </div>
     </footer>

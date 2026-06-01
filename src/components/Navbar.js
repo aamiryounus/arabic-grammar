@@ -29,10 +29,10 @@ const lessons = [
     text: "#B5D4F4",
     items: [
       { id: 4, title: "Introduction to I'rab", titleUr: "اعراب کا تعارف", ready: true },
-      { id: 5, title: "Raf' — Nominative Case", titleUr: "رفع", ready: true },
-      { id: 6, title: "Nasb — Accusative Case", titleUr: "نصب", ready: true },
-      { id: 7, title: "Jarr — Genitive Case", titleUr: "جر", ready: true },
-      { id: 8, title: "Jazm — Jussive Case", titleUr: "جزم", ready: true },
+      { id: 5, title: "Raf' — Nominative Case", titleUr: "اسم کے رفع ہونے کی  وجوہات", ready: true },
+      { id: 6, title: "Nasb — Accusative Case", titleUr: "اسم کے نصب ہونے کی  وجوہات", ready: true },
+      { id: 7, title: "Jarr — Genitive Case", titleUr: "اسم کے جر ہونے کی  وجوہات", ready: true },
+      { id: 8, title: "Jazm — Jussive Case", titleUr: "فعل کے جزم ہونے کی  وجوہات", ready: true },
     ],
   },
   {
