@@ -245,7 +245,7 @@ export default function Navbar({ currentLesson }) {
               {isUrdu ? <span className="urdu">تمام اسباق</span> : "All Lessons"}
             </div>
             <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "2px" }}>
-              {isUrdu ? <span className="urdu">۵ درجات • ۲۲ اسباق</span> : "5 Levels • 22 Lessons"}
+            
             </div>
           </div>
           <button
