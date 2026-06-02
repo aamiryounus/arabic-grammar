@@ -108,15 +108,15 @@ export default function Navbar({ currentLesson }) {
       >
         {/* Left side: App Name + Lessons button */}
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
-            <span style={{ fontSize: "22px" }}>☪️</span>
-            <span
-              className={language === "ur" ? "urdu" : ""}
-              style={{ fontSize: "18px", fontWeight: "600", color: "var(--color-primary)" }}
-            >
-              {t.appName}
-            </span>
-          </Link>
+         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}>
+  <img src="/icon-192.png" alt="logo" style={{ width: "50px", height: "50px", borderRadius: "8px" }} />
+  <span
+    className="quran-arabic"
+    style={{ fontSize: "20px", fontWeight: "600", color: "var(--color-primary)" }}
+  >
+    نَحْوُ الْقُرْآنِ
+  </span>
+</Link>
 
           {/* Lessons Navigator Button */}
           <button

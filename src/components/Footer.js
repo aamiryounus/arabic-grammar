@@ -28,14 +28,14 @@ export default function Footer() {
         {/* Brand Column */}
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-            <span style={{ fontSize: "20px" }}>☪️</span>
-            <span
-              className={isUrdu ? "urdu" : ""}
-              style={{ fontSize: "16px", fontWeight: "700", color: "var(--color-primary)" }}
-            >
-              {isUrdu ? "قرآنی عربی گرامر" : "Quranic Arabic Grammar"}
-            </span>
-          </div>
+  <img src="/icon-192.png" alt="logo" style={{ width: "48px", height: "48px", borderRadius: "8px" }} />
+  <span
+    className="quran-arabic"
+    style={{ fontSize: "16px", fontWeight: "700", color: "var(--color-primary)" }}
+  >
+    نَحْوُ الْقُرْآنِ
+  </span>
+</div>
           <p
             className={isUrdu ? "urdu" : ""}
             style={{ fontSize: "13px", color: "var(--color-text-muted)", lineHeight: "1.7" }}

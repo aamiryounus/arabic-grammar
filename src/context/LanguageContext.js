@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 export const translations = {
   en: {
-    appName: "Quranic Arabic Grammar",
+    appName: "نَحْوُ الْقُرْآنِ",
     appSubtitle: "From Letters to the Language of the Quran",
     heroDescription:
       "A structured journey through Arabic grammar — built on classical scholarship, illuminated by Quranic verses.",
@@ -27,7 +27,7 @@ export const translations = {
     lesson1Desc: "The master key to all Arabic grammar",
   },
   ur: {
-    appName: "قرآنی عربی گرامر",
+    appName: "نَحْوُ الْقُرْآنِ",
     appSubtitle: "حروف سے قرآن کی زبان تک",
     heroDescription:
       "عربی گرامر کا منظم سفر — کلاسیکی علم کی بنیاد پر، قرآنی آیات کی روشنی میں۔",
