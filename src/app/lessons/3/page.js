@@ -60,12 +60,12 @@ const lessonContent = {
 },
     ],
     genderTitle: "Gender — المذكر والمؤنث",
-    genderDesc: "Every Arabic noun is either masculine (مذکر) or feminine (مؤنث). There is no neutral gender. And every noun is masculine, until it is proven to be feminine.",
+    genderDesc: "Every Arabic noun is either masculine (مذکر) or feminine (مؤنث). Every noun is masculine, until it is proven to be feminine according to following diagram.",
     genderTable: [
       { type: "Masculine (مذكر)", sign: "No special ending", examples: "رَجُل (man), كِتَاب (book), قَلَم (pen)", color: "#085041", border: "#1d9e75", text: "#9fe1cb" },
       { type: "Feminine (مؤنث)", sign: "Usually ends in ة (Ta Marbuta)", examples: "مَرْأَة (woman), مَدْرَسَة (school), سُورَة (surah)", color: "#4a1b0c", border: "#d85a30", text: "#f0997b" },
     ],
-    genderNote: "Some nouns are feminine by nature even without ة — like شَمْس (sun), أَرْض (earth), نَار (fire).",
+    genderNote: "Some nouns are feminine by nature even without feminine sign — like شَمْسٌ (sun), سَمَاءٌ (sky), أَرْضٌ (earth), نَفْسٌ (soul), حَرْبٌ (war), دَارٌ (house), عَصَا (staff).",
     numberTitle: "Number — العدد",
     numberDesc: "Arabic has THREE numbers — singular, dual, and plural.",
     numbers: [
@@ -167,12 +167,12 @@ const lessonContent = {
 },
     ],
     genderTitle: "جنس — المذكر والمؤنث",
-    genderDesc: " عربی کا ہر اسم یا مذکر ہے یا مؤنث۔ کوئی غیر جانبدار جنس نہیں ہوتی ۔اور ہر اسم مذکر ہے جب تک اس کا مؤنث ہونا ثابت نہ ہو جائے۔",
+    genderDesc: " عربی کا ہر اسم یا مذکر ہے یا مؤنث۔ اور ہر اسم مذکر ہے جب تک اس کا مؤنث ہونا نیچے دی گئ ڈایاگرام کے مطابق ثابت نہ ہو جائے۔",
     genderTable: [
       { type: "مذکر", sign: "کوئی خاص علامت نہیں", examples: "رَجُل (مرد)، كِتَاب (کتاب)، قَلَم (قلم)", color: "#085041", border: "#1d9e75", text: "#9fe1cb" },
       { type: "مؤنث", sign: "عموماً ة (تاء مربوطہ) پر ختم ہوتا ہے", examples: "مَرْأَة (عورت)، مَدْرَسَة (مدرسہ)، سُورَة (سورت)", color: "#4a1b0c", border: "#d85a30", text: "#f0997b" },
     ],
-    genderNote: "کچھ اسم بغیر ة کے بھی مؤنث ہوتے ہیں — جیسے شَمْس (سورج)، أَرْض (زمین)، نَار (آگ)۔",
+    genderNote: "کچھ اسم بغیر علامت کے بھی مؤنث ہوتے ہیں — جیسے شَمْسٌ (سورج)، سَمَاءٌ (آسمان)، أَرْضٌ (زمین)، نَفْسٌ (نفس)، حَرْبٌ (جنگ)، دَارٌ (گھر)، عَصَا (لاٹھی)۔",
     numberTitle: "عدد — المفرد والمثنى والجمع",
     numberDesc: "عربی میں تین عدد ہیں — مفرد، مثنیٰ اور جمع۔",
     numbers: [
@@ -303,7 +303,7 @@ function LessonContent() {
 <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", lineHeight: "1.8", marginBottom: "20px", textAlign: isUrdu ? "right" : "left" }}>
           {isUrdu
             ? "عربی میں اسم کو جملے میں استعمال کرنے کے لیے اس کی چار خصوصیات کا جاننا ضروری ہے۔ جنس، عدد، وسعت (نکرہ/معرفہ)، اعراب۔"
-            : "To use a noun correctly in an Arabic sentence, you must know its four properties: Gender, Number, Definiteness, and Status (I'rab)."}
+            : "To use a noun correctly in an Arabic sentence, you must know its four properties: Gender, Number, Capicity, and Status (I'rab)."}
         </p>
         {/* Hierarchy Diagram */}
         <div style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "16px", padding: "32px 24px", marginBottom: "32px", textAlign: "center" }}>
@@ -311,8 +311,8 @@ function LessonContent() {
           {/* Top Node */}
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ backgroundColor: "#1a3a2a", border: "2px solid var(--color-primary)", borderRadius: "12px", padding: "14px 36px" }}>
-              <div className="arabic" style={{ fontSize: "20px", color: "var(--color-primary)", fontWeight: "700" }}>الاسم</div>
-              <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: "var(--color-primary)", marginTop: "4px" }}>{isUrdu ? "اسم" : "Noun"}</div>
+              
+              <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "25px", color: "var(--color-primary)", marginTop: "4px" }}>{isUrdu ? "اسم" : "Noun"}</div>
             </div>
           </div>
 
@@ -320,22 +320,22 @@ function LessonContent() {
           <div style={{ width: "2px", height: "32px", backgroundColor: "var(--color-primary)", margin: "0 auto" }} />
 
           {/* Horizontal bar */}
-          <div style={{ maxWidth: "700px", margin: "0 auto", height: "2px", backgroundColor: "var(--color-border)" }} />
+          <div style={{ maxWidth: "700px", margin: "0 auto", height: "2px", backgroundColor: "var(--color-primary)" }} />
 
           {/* 4 Branch nodes */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px", maxWidth: "700px", margin: "0 auto" }}>
             {[
               { arabic: "الجنس", en: "Gender", ur: "جنس", color: "#085041", border: "#1d9e75", text: "#9fe1cb", sub: isUrdu ? "مذکر / مؤنث" : "Masculine / Feminine" },
               { arabic: "العدد", en: "Number", ur: "عدد", color: "#3c3489", border: "#7f77dd", text: "#cecbf6", sub: isUrdu ? "مفرد / مثنیٰ / جمع" : "Singular / Dual / Plural" },
-              { arabic: "التعريف", en: "Definiteness", ur: "معرفہ و نکرہ", color: "#633806", border: "#ef9f27", text: "#fac775", sub: isUrdu ? "معرفہ / نکرہ" : "Definite / Indefinite" },
+              { arabic: "التعريف", en: "Capicity", ur: "وسعت", color: "#633806", border: "#ef9f27", text: "#fac775", sub: isUrdu ? "معرفہ / نکرہ" : "Definite / Indefinite" },
               { arabic: "الإعراب", en: "Status", ur: "اعراب", color: "#4a1b0c", border: "#d85a30", text: "#f0997b", sub: isUrdu ? "رفع / نصب / جر" : "Raf' / Nasb / Jarr" },
             ].map((node, i) => (
               <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div style={{ width: "2px", height: "32px", backgroundColor: node.border }} />
                 <div style={{ backgroundColor: node.color, border: `2px solid ${node.border}`, borderRadius: "10px", padding: "14px 10px", width: "100%", textAlign: "center" }}>
-                  <div className="arabic" style={{ fontSize: "16px", color: node.text, fontWeight: "600", marginBottom: "4px" }}>{node.arabic}</div>
-                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "13px", color: node.text, fontWeight: "700", marginBottom: "6px" }}>{isUrdu ? node.ur : node.en}</div>
-                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "11px", color: node.text, opacity: 0.75 }}>{node.sub}</div>
+                  
+                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "17px", color: node.text, fontWeight: "700", marginBottom: "6px" }}>{isUrdu ? node.ur : node.en}</div>
+                  <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: node.text, opacity: 0.75 }}>{node.sub}</div>
                 </div>
               </div>
             ))}
@@ -343,23 +343,116 @@ function LessonContent() {
         </div>
 
         {/* Gender */}
-        <h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)", marginTop: "32px" }}>
-          {c.genderTitle}
-        </h2>
-        <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", marginBottom: "16px", lineHeight: "1.8" }}>{c.genderDesc}</p>
+<h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)", marginTop: "32px" }}>
+  {c.genderTitle}
+</h2>
+<p className={isUrdu ? "urdu" : ""} style={{ fontSize: "15px", color: "var(--color-text-muted)", marginBottom: "24px", lineHeight: "1.8" }}>{c.genderDesc}</p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px", marginBottom: "16px" }}>
-          {c.genderTable.map((g, i) => (
-            <div key={i} style={{ backgroundColor: g.color, border: `1px solid ${g.border}`, borderRadius: "12px", padding: "20px" }}>
-              <div className={isUrdu ? "urdu" : ""} style={{ fontSize: "18px", fontWeight: "700", color: g.text, marginBottom: "8px" }}>{g.type}</div>
-              <div style={{ fontSize: "13px", color: g.text, opacity: 0.8, marginBottom: "8px" }}>{g.sign}</div>
-              <div className="arabic" style={{ fontSize: "15px", color: g.text, lineHeight: "1.8" }}>{g.examples}</div>
-            </div>
-          ))}
-        </div>
-        <div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "8px", padding: "14px 18px", borderLeft: "3px solid var(--color-primary)", marginBottom: "32px" }}>
-          <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)" }}>💡 {c.genderNote}</p>
-        </div>
+{/* Gender Hierarchy Diagram */}
+<div style={{ backgroundColor: "var(--color-surface)", border: "1px solid var(--color-border)", borderRadius: "16px", padding: "32px 24px", marginBottom: "16px", textAlign: "center", overflowX: "auto" }}>
+ <svg width="100%" viewBox="0 0 1000 720" style={{ display: "block", overflow: "visible", minWidth: "700px" }}>
+
+  {/* ══ ROOT: جنس ══ */}
+  <rect x="380" y="10" width="200" height="68" rx="12" fill="#1a2a1a" stroke="#1d9e75" strokeWidth="1.5"/>
+  <text x="480" y="55" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "20px", fill: "#9fe1cb", fontWeight: "700" }}>{isUrdu ? "جنس" : "Gender"}</text>
+ 
+
+  {/* root → مذکر */}
+  <line x1="430" y1="78" x2="200" y2="148" stroke="#1d9e75" strokeWidth="1.2" opacity="0.7"/>
+  {/* root → مؤنث */}
+  <line x1="530" y1="78" x2="730" y2="148" stroke="#d85a30" strokeWidth="1.2" opacity="0.7"/>
+
+  {/* ══ مذکر ══ */}
+  <rect x="100" y="148" width="200" height="68" rx="10" fill="#085041" stroke="#1d9e75" strokeWidth="1.5"/>
+  <text x="200" y="195" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "20px", fill: "#9fe1cb", fontWeight: "700" }}>{isUrdu ? "مذکر" : "Masculine"}</text>
+ 
+
+  {/* مذکر → leaf */}
+  <line x1="200" y1="216" x2="200" y2="256" stroke="#1d9e75" strokeWidth="1.2" opacity="0.7"/>
+  <rect x="50" y="256" width="300" height="68" rx="8" fill="#052e22" stroke="#1d9e75" strokeWidth="1"/>
+  <text x="200" y="282" textAnchor="middle" style={{ fontSize: "12px", fill: "#9fe1cb", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "کوئی خاص علامت نہیں" : "No special ending"}</text>
+  <text x="200" y="308" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "14px", fill: "#5dcaa5" }}>رَجُل، كِتَاب، قَلَم</text>
+
+  {/* ══ مؤنث ══ */}
+  <rect x="630" y="148" width="200" height="68" rx="10" fill="#4a1b0c" stroke="#d85a30" strokeWidth="1.5"/>
+  <text x="730" y="195" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "20px", fill: "#f0997b", fontWeight: "700" }}>{isUrdu ? "مؤنث" : "Feminine"}</text>
+ 
+
+  {/* مؤنث → غیر حقیقی */}
+  <line x1="685" y1="216" x2="530" y2="296" stroke="#d85a30" strokeWidth="1.2" opacity="0.7"/>
+  {/* مؤنث → حقیقی */}
+  <line x1="775" y1="216" x2="880" y2="296" stroke="#d85a30" strokeWidth="1.2" opacity="0.7"/>
+
+  {/* ══ غیر حقیقی ══ */}
+  <rect x="400" y="296" width="260" height="68" rx="10" fill="#3d1808" stroke="#d85a30" strokeWidth="1.5"/>
+  <text x="530" y="341" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#f0997b", fontWeight: "700" }}>{isUrdu ? "غیر حقیقی" : "Non-Real Feminine"}</text>
+  
+
+  {/* غیر حقیقی → علامتی */}
+  <line x1="470" y1="364" x2="280" y2="424" stroke="#ef9f27" strokeWidth="1.2" opacity="0.7"/>
+  {/* غیر حقیقی → سماعی */}
+  <line x1="560" y1="364" x2="620" y2="424" stroke="#ef9f27" strokeWidth="1.2" opacity="0.7"/>
+
+  {/* ══ علامتی ══ */}
+  <rect x="140" y="424" width="220" height="68" rx="8" fill="#3d2c00" stroke="#ef9f27" strokeWidth="1.5"/>
+  <text x="250" y="452" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#fac775", fontWeight: "700" }}>{isUrdu ? "علامتی" : "By Sign"}</text>
+  <text x="250" y="478" textAnchor="middle" style={{ fontSize: "10px", fill: "#ef9f27", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "علامت سے — ة یا ىٰ" : "By sign — ة or ىٰ"}</text>
+
+  {/* علامتی → ة */}
+  <line x1="210" y1="492" x2="185" y2="532" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
+  <rect x="137" y="532" width="96" height="52" rx="6" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
+  <text x="185" y="564" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "26px", fill: "#fac775" }}>ة</text>
+
+  {/* علامتی → ىٰ */}
+  <line x1="290" y1="492" x2="320" y2="532" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
+  <rect x="272" y="532" width="96" height="52" rx="6" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
+  <text x="320" y="564" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "26px", fill: "#fac775" }}>ىٰ</text>
+
+  {/* ══ سماعی ══ */}
+  <rect x="510" y="424" width="220" height="68" rx="8" fill="#3d2c00" stroke="#ef9f27" strokeWidth="1.5"/>
+  <text x="620" y="452" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#fac775", fontWeight: "700" }}>{isUrdu ? "سماعی" : "By Hearing"}</text>
+  <text x="620" y="478" textAnchor="middle" style={{ fontSize: "10px", fill: "#ef9f27", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "روایت سے پہچانا جائے" : "By hearing/tradition"}</text>
+
+  {/* سماعی → bullet box */}
+  <line x1="620" y1="492" x2="620" y2="532" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
+  <line x1="620" y1="532" x2="620" y2="570" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
+  <rect x="450" y="570" width="350" height="136" rx="8" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
+
+  {isUrdu
+    ? <text x="780" y="602" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>نام: ہوا، شراب، آگ، شہر، ملک</text>
+    : <text x="677" y="602" textAnchor="end" style={{ fontSize: "13px", fill: "#fac775", fontFamily: "inherit" }}>Names: wind, wine, fire, city, country</text>
+  }
+  <line x1="406" y1="616" x2="874" y2="616" stroke="#ef9f27" strokeWidth="0.4" opacity="0.35"/>
+
+  {isUrdu
+    ? <text x="780" y="648" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>جفت جسمانی اعضاء — آنکھ، کان، ہاتھ</text>
+    : <text x="670" y="648" textAnchor="end" style={{ fontSize: "13px", fill: "#fac775", fontFamily: "inherit" }}>Paired body parts — eye, ear, hand</text>
+  }
+  <line x1="406" y1="662" x2="874" y2="662" stroke="#ef9f27" strokeWidth="0.4" opacity="0.35"/>
+
+  {isUrdu
+    ? <text x="780" y="692" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>متفرق: شَمْسٌ، سَمَاءٌ، أَرْضٌ، نَفْسٌ، حَرْبٌ، دَارٌ، عَصَا</text>
+    : <text x="720" y="692" textAnchor="end" style={{ fontSize: "13px", fill: "#fac775", fontFamily: "inherit" }}>Misc: شَمْسٌ، سَمَاءٌ، أَرْضٌ، نَفْسٌ، حَرْبٌ، دَارٌ، عَصَا</text>
+  }
+
+  {/* ══ حقیقی ══ */}
+  <rect x="780" y="296" width="200" height="68" rx="10" fill="#3d1808" stroke="#d85a30" strokeWidth="1.5"/>
+ <text x="880" y="337" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#f0997b", fontWeight: "700" }}>{isUrdu ? "حقیقی" : "Real Feminine"}</text>
+ 
+
+  {/* حقیقی → leaf */}
+  <line x1="880" y1="364" x2="880" y2="424" stroke="#d85a30" strokeWidth="1.2" opacity="0.7"/>
+  <rect x="760" y="424" width="220" height="68" rx="8" fill="#2a0f06" stroke="#d85a30" strokeWidth="1"/>
+  <text x="870" y="450" textAnchor="middle" style={{ fontSize: "12px", fill: "#f0997b", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "عورت، بچی، بکری" : "Woman, girl, ewe"}</text>
+  <text x="870" y="470" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "14px", fill: "#d85a30" }}>مَرْأَة، بِنْت، نَاقَة</text>
+
+</svg>
+</div>
+
+{/* Gender Note */}
+<div style={{ backgroundColor: "var(--color-surface2)", borderRadius: "8px", padding: "14px 18px", borderLeft: "3px solid var(--color-primary)", marginBottom: "32px" }}>
+  <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)" }}>💡 {c.genderNote}</p>
+</div>
 
         {/* Number */}
         <h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)" }}>
@@ -381,7 +474,7 @@ function LessonContent() {
           <p className={isUrdu ? "urdu" : ""} style={{ fontSize: "14px", color: "var(--color-text-muted)" }}>💡 {c.dualNote}</p>
         </div>
 
-        {/* Definiteness */}
+        {/* Capicity */}
         <h2 className={isUrdu ? "urdu" : ""} style={{ fontSize: "22px", fontWeight: "700", color: "var(--color-primary)", marginBottom: "12px", paddingBottom: "12px", borderBottom: "1px solid var(--color-border)" }}>
           {c.definitenessTitle}
         </h2>

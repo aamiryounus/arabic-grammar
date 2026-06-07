@@ -269,7 +269,63 @@ style={{ marginBottom: "12px" }}
             {c.goldenRule}
           </p>
         </div>
-{/* English → Arabic Parts of Speech Hierarchy */}
+
+
+
+        {/* Three Parts Table */}
+        <div
+          style={{
+            backgroundColor: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
+            borderRadius: "12px",
+            padding: "28px",
+            marginBottom: "32px",
+          }}
+        >
+          <h2
+            className={isUrdu ? "urdu" : ""}
+            style={{ fontSize: "20px", fontWeight: "600", marginBottom: "20px", color: "var(--color-primary)" }}
+          >
+            {c.tableTitle}
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            {c.parts.map((part, i) => (
+              <div
+                key={i}
+                style={{
+                  backgroundColor: part.color,
+                  border: `1px solid ${part.border}`,
+                  borderRadius: "10px",
+                  padding: "16px 20px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "20px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div
+                  className="quran-arabic"
+style={{ marginBottom: "12px" }}
+                >
+                  {part.term}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: "16px", fontWeight: "600", color: part.text }}>
+                    {part.name} — {part.meaning}
+                  </div>
+                  <div
+                    className={isUrdu ? "urdu" : ""}
+                    style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px" }}
+                  >
+                    {part.desc}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* English → Arabic Parts of Speech Hierarchy */}
         <div
           style={{
             backgroundColor: "var(--color-surface)",
@@ -433,60 +489,6 @@ style={{ marginBottom: "12px" }}
             </text>
 
           </svg>
-        </div>
-
-
-        {/* Three Parts Table */}
-        <div
-          style={{
-            backgroundColor: "var(--color-surface)",
-            border: "1px solid var(--color-border)",
-            borderRadius: "12px",
-            padding: "28px",
-            marginBottom: "32px",
-          }}
-        >
-          <h2
-            className={isUrdu ? "urdu" : ""}
-            style={{ fontSize: "20px", fontWeight: "600", marginBottom: "20px", color: "var(--color-primary)" }}
-          >
-            {c.tableTitle}
-          </h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            {c.parts.map((part, i) => (
-              <div
-                key={i}
-                style={{
-                  backgroundColor: part.color,
-                  border: `1px solid ${part.border}`,
-                  borderRadius: "10px",
-                  padding: "16px 20px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "20px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <div
-                  className="quran-arabic"
-style={{ marginBottom: "12px" }}
-                >
-                  {part.term}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: "16px", fontWeight: "600", color: part.text }}>
-                    {part.name} — {part.meaning}
-                  </div>
-                  <div
-                    className={isUrdu ? "urdu" : ""}
-                    style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px" }}
-                  >
-                    {part.desc}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Quranic Example 1 */}
