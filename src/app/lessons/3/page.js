@@ -370,8 +370,8 @@ function LessonContent() {
   {/* مذکر → leaf */}
   <line x1="200" y1="216" x2="200" y2="256" stroke="#1d9e75" strokeWidth="1.2" opacity="0.7"/>
   <rect x="50" y="256" width="300" height="68" rx="8" fill="#052e22" stroke="#1d9e75" strokeWidth="1"/>
-  <text x="200" y="282" textAnchor="middle" style={{ fontSize: "12px", fill: "#9fe1cb", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "کوئی خاص علامت نہیں" : "No special ending"}</text>
-  <text x="200" y="308" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "14px", fill: "#5dcaa5" }}>رَجُل، كِتَاب، قَلَم</text>
+  <text x="200" y="282" textAnchor="middle" style={{ fontSize: "18px", fill: "#9fe1cb", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "کوئی خاص علامت نہیں" : "No special ending"}</text>
+  <text x="200" y="313" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "28px", fill: "#5dcaa5" }}>رَجُل، كِتَاب، قَلَم</text>
 
   {/* ══ مؤنث ══ */}
   <rect x="630" y="148" width="200" height="68" rx="10" fill="#4a1b0c" stroke="#d85a30" strokeWidth="1.5"/>
@@ -396,55 +396,57 @@ function LessonContent() {
   {/* ══ علامتی ══ */}
   <rect x="140" y="424" width="220" height="68" rx="8" fill="#3d2c00" stroke="#ef9f27" strokeWidth="1.5"/>
   <text x="250" y="452" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#fac775", fontWeight: "700" }}>{isUrdu ? "علامتی" : "By Sign"}</text>
-  <text x="250" y="478" textAnchor="middle" style={{ fontSize: "10px", fill: "#ef9f27", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "علامت سے — ة یا ىٰ" : "By sign — ة or ىٰ"}</text>
+  <text x="250" y="478" textAnchor="middle" style={{ fontSize: "18px", fill: "#ef9f27", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "علامت سے — ة یا ىٰ" : "By sign — ة or ىٰ"}</text>
 
   {/* علامتی → ة */}
   <line x1="210" y1="492" x2="185" y2="532" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
-  <rect x="137" y="532" width="96" height="52" rx="6" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
-  <text x="185" y="564" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "26px", fill: "#fac775" }}>ة</text>
+  <rect x="128" y="532" width="120" height="60" rx="6" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
+  <text x="185" y="565" textAnchor="middle" style={{ fontSize: "18px", fill: "#f0997b", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "اسم کے آخر میں " : "Noun ends at"}</text>
+  <text x="185" y="590" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "34px", fill: "#fac775" }}>ة</text>
 
   {/* علامتی → ىٰ */}
   <line x1="290" y1="492" x2="320" y2="532" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
-  <rect x="272" y="532" width="96" height="52" rx="6" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
-  <text x="320" y="564" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "26px", fill: "#fac775" }}>ىٰ</text>
+  <rect x="260" y="532" width="120" height="60" rx="6" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
+  <text x="320" y="565" textAnchor="middle" style={{ fontSize: "18px", fill: "#f0997b", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "اسم کے آخر میں " : "Noun ends at"}</text>
+  <text x="320" y="585" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "34px", fill: "#fac775" }}>ىٰ</text>
 
   {/* ══ سماعی ══ */}
   <rect x="510" y="424" width="220" height="68" rx="8" fill="#3d2c00" stroke="#ef9f27" strokeWidth="1.5"/>
   <text x="620" y="452" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#fac775", fontWeight: "700" }}>{isUrdu ? "سماعی" : "By Hearing"}</text>
-  <text x="620" y="478" textAnchor="middle" style={{ fontSize: "10px", fill: "#ef9f27", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "روایت سے پہچانا جائے" : "By hearing/tradition"}</text>
+  <text x="620" y="478" textAnchor="middle" style={{ fontSize: "18px", fill: "#ef9f27", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "روایت سے پہچانا جائے" : "By hearing/tradition"}</text>
 
   {/* سماعی → bullet box */}
   <line x1="620" y1="492" x2="620" y2="532" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
   <line x1="620" y1="532" x2="620" y2="570" stroke="#ef9f27" strokeWidth="1" opacity="0.7"/>
-  <rect x="450" y="570" width="350" height="136" rx="8" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
+  <rect x="450" y="570" width="360" height="136" rx="8" fill="#261d00" stroke="#ef9f27" strokeWidth="1"/>
 
   {isUrdu
     ? <text x="780" y="602" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>نام: ہوا، شراب، آگ، شہر، ملک</text>
-    : <text x="677" y="602" textAnchor="end" style={{ fontSize: "13px", fill: "#fac775", fontFamily: "inherit" }}>Names: wind, wine, fire, city, country</text>
+    : <text x="745" y="602" textAnchor="end" style={{ fontSize: "18px", fill: "#fac775", fontFamily: "inherit" }}>Names: wind, wine, fire, city, country</text>
   }
   <line x1="406" y1="616" x2="874" y2="616" stroke="#ef9f27" strokeWidth="0.4" opacity="0.35"/>
 
   {isUrdu
-    ? <text x="780" y="648" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>جفت جسمانی اعضاء — آنکھ، کان، ہاتھ</text>
-    : <text x="670" y="648" textAnchor="end" style={{ fontSize: "13px", fill: "#fac775", fontFamily: "inherit" }}>Paired body parts — eye, ear, hand</text>
+    ? <text x="780" y="648" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>جفت جسمانی اعضاء — آنکھ، کان، ہاتھ وغیرہ</text>
+    : <text x="735" y="648" textAnchor="end" style={{ fontSize: "18px", fill: "#fac775", fontFamily: "inherit" }}>Paired body parts — eye, ear, hand</text>
   }
   <line x1="406" y1="662" x2="874" y2="662" stroke="#ef9f27" strokeWidth="0.4" opacity="0.35"/>
 
   {isUrdu
-    ? <text x="780" y="692" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>متفرق: شَمْسٌ، سَمَاءٌ، أَرْضٌ، نَفْسٌ، حَرْبٌ، دَارٌ، عَصَا</text>
-    : <text x="720" y="692" textAnchor="end" style={{ fontSize: "13px", fill: "#fac775", fontFamily: "inherit" }}>Misc: شَمْسٌ، سَمَاءٌ، أَرْضٌ، نَفْسٌ، حَرْبٌ، دَارٌ، عَصَا</text>
+    ? <text x="780" y="692" textAnchor="end" style={{ fontFamily: "'Noto Nastaliq Urdu', serif", fontSize: "14px", fill: "#fac775" }}>متفرق اسماء: شَمْسٌ، سَمَاءٌ، أَرْضٌ، نَفْسٌ، حَرْبٌ، دَارٌ، عَصَا</text>
+    : <text x="800" y="692" textAnchor="end" style={{ fontSize: "18px", fill: "#fac775", fontFamily: "inherit" }}>Misc: شَمْسٌ، سَمَاءٌ، أَرْضٌ، نَفْسٌ، حَرْبٌ، دَارٌ، عَصَا</text>
   }
 
   {/* ══ حقیقی ══ */}
-  <rect x="780" y="296" width="200" height="68" rx="10" fill="#3d1808" stroke="#d85a30" strokeWidth="1.5"/>
- <text x="880" y="337" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#f0997b", fontWeight: "700" }}>{isUrdu ? "حقیقی" : "Real Feminine"}</text>
+  <rect x="765" y="296" width="230" height="68" rx="10" fill="#3d1808" stroke="#d85a30" strokeWidth="1.5"/>
+ <text x="880" y="337" textAnchor="middle" style={{ fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit", fontSize: "18px", fill: "#f0997b", fontWeight: "700" }}>{isUrdu ? "حقیقی    (بیالوجیکل مادہ)" : "Real Feminine(Biological)"}</text>
  
 
   {/* حقیقی → leaf */}
   <line x1="880" y1="364" x2="880" y2="424" stroke="#d85a30" strokeWidth="1.2" opacity="0.7"/>
   <rect x="760" y="424" width="220" height="68" rx="8" fill="#2a0f06" stroke="#d85a30" strokeWidth="1"/>
-  <text x="870" y="450" textAnchor="middle" style={{ fontSize: "12px", fill: "#f0997b", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "عورت، بچی، بکری" : "Woman, girl, ewe"}</text>
-  <text x="870" y="470" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "14px", fill: "#d85a30" }}>مَرْأَة، بِنْت، نَاقَة</text>
+  <text x="870" y="455" textAnchor="middle" style={{ fontSize: "16px", fill: "#f0997b", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "inherit" }}>{isUrdu ? "عورت، بچی، اونٹنی" : "Woman, girl, She-Camel"}</text>
+  <text x="870" y="483" textAnchor="middle" style={{ fontFamily: "'Scheherazade New', 'Traditional Arabic', serif", fontSize: "24px", fill: "#d85a30" }}>مَرْأَة، بِنْت، نَاقَة</text>
 
 </svg>
 </div>
