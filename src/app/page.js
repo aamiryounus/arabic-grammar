@@ -76,17 +76,19 @@ function HomeContent() {
         {/* CTA Buttons */}
         <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
           <Link
-            href="/lessons/1"
+           href="/lessons/1"
+            className={isUrdu ? "urdu" : ""}
             style={{
               backgroundColor: "var(--color-primary)",
               color: "#0f1117",
               borderRadius: "10px",
               padding: "14px 32px",
-              fontSize: "16px",
+              fontSize: isUrdu ? "20px" : "16px",
               fontWeight: "700",
               cursor: "pointer",
               textDecoration: "none",
               display: "inline-block",
+              lineHeight: isUrdu ? "1.2" : undefined,
             }}
           >
             {t.startLearning}
@@ -94,17 +96,19 @@ function HomeContent() {
 
           <Link
             href="/syllabus"
+            className={isUrdu ? "urdu" : ""}
             style={{
               backgroundColor: "transparent",
               color: "var(--color-primary)",
               border: "1px solid var(--color-primary)",
               borderRadius: "10px",
               padding: "14px 32px",
-              fontSize: "16px",
+              fontSize: isUrdu ? "20px" : "16px",
               fontWeight: "600",
               cursor: "pointer",
               textDecoration: "none",
               display: "inline-block",
+              lineHeight: isUrdu ? "1.2" : undefined,
             }}
           >
             {t.viewSyllabus}
