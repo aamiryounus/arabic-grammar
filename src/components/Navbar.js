@@ -167,7 +167,7 @@ export default function Navbar({ currentLesson }) {
             onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-primary)")}
             onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--color-border)")}
           >
-            <span style={{ fontSize: "16px" }}>{isDark ? "☀️" : "🌙"}</span>
+            <span style={{ fontSize: "16px" }} suppressHydrationWarning>{isDark ? "☀️" : "🌙"}</span>
             <span>{isDark ? "Light" : "Dark"}</span>
           </button>
 
@@ -186,10 +186,9 @@ export default function Navbar({ currentLesson }) {
               transition: "all 0.2s",
             }}
           >
-            <span style={{ fontSize: "16px" }}>🌐</span>
-            <span style={{ color: "var(--color-primary)", fontWeight: "600", fontSize: "14px" }}>
-              {language === "en" ? "اردو" : "English"}
-            </span>
+            <span style={{ color: "var(--color-primary)", fontWeight: "600", fontSize: "14px" }} suppressHydrationWarning>
+  {language === "en" ? "اردو" : "English"}
+</span>
           </button>
 
         </div>

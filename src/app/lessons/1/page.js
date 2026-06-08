@@ -303,23 +303,24 @@ style={{ marginBottom: "12px" }}
                   flexWrap: "wrap",
                 }}
               >
-                <div
-                  className="quran-arabic"
-style={{ marginBottom: "12px" }}
-                >
-                  {part.term}
-                </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: "16px", fontWeight: "600", color: part.text }}>
-                    {part.name} — {part.meaning}
-                  </div>
+                  {!isUrdu && (
+                    <div style={{ fontSize: "16px", fontWeight: "700", color: part.text, marginBottom: "4px" }}>
+                      {part.meaning}
+                    </div>
+                  )}
                   <div
                     className={isUrdu ? "urdu" : ""}
-                    style={{ fontSize: "14px", color: part.text, opacity: 0.8, marginTop: "4px" }}
+                    style={{ fontSize: "14px", color: part.text, opacity: 0.8 }}
                   >
                     {part.desc}
                   </div>
                 </div>
+                {isUrdu && (
+                  <div className="urdu" style={{ fontSize: "26px", color: part.text, lineHeight: "2" }}>
+                    {part.name}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -353,7 +354,7 @@ style={{ marginBottom: "12px" }}
           <svg
             width="100%"
             viewBox="0 0 720 500"
-            style={{ display: "block", overflow: "visible" }}
+            style={{ display: "block", overflow: "visible", fontFamily: "'Segoe UI', system-ui, sans-serif" }}
             aria-label={isUrdu ? "انگریزی سے عربی اجزاء کلام کا خاکہ" : "Hierarchy: English parts of speech mapping to Arabic"}
           >
             <defs>
@@ -364,34 +365,34 @@ style={{ marginBottom: "12px" }}
 
             {/* Column headers */}
             <text x="92" y="18" textAnchor="middle"
-              style={{ fontSize: "10px", letterSpacing: "0.07em", fill: "var(--color-text-muted)", fontFamily: "inherit" }}>
+              style={{ fontSize: "10px", letterSpacing: "0.07em", fill: "var(--color-text-muted)", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "'Segoe UI', system-ui, sans-serif" }}>
               {isUrdu ? "انگریزی" : "ENGLISH"}
             </text>
             <text x="360" y="18" textAnchor="middle"
-              style={{ fontSize: "10px", letterSpacing: "0.07em", fill: "var(--color-text-muted)", fontFamily: "inherit" }}>
+              style={{ fontSize: "10px", letterSpacing: "0.07em", fill: "var(--color-text-muted)", fontFamily: "Noto Nastaliq Urdu" }}>
               {isUrdu ? "عربی" : "ARABIC"}
             </text>
             <text x="630" y="18" textAnchor="middle"
-              style={{ fontSize: "10px", letterSpacing: "0.07em", fill: "var(--color-text-muted)", fontFamily: "inherit" }}>
+              style={{ fontSize: "10px", letterSpacing: "0.07em", fill: "var(--color-text-muted)", fontFamily: "Noto Nastaliq Urdu" }}>
               {isUrdu ? "انگریزی" : "ENGLISH"}
             </text>
 
             {/* ISM source boxes (left) */}
             {[
-              { label: isUrdu ? "اسم (Noun)"             : "Noun",               sub: isUrdu ? "شخص، جگہ، چیز"    : "person, place, thing",  y: 36  },
-              { label: isUrdu ? "ضمیر (Pronoun)"          : "Pronoun",            sub: isUrdu ? "وہ، یہ، تم"        : "he, she, they, it",      y: 96  },
-              { label: isUrdu ? "صفت (Adjective)"         : "Adjective",          sub: isUrdu ? "بڑا، اچھا، رحیم"   : "big, good, merciful",    y: 156 },
-              { label: isUrdu ? "ظرف (Adverb)"            : "Adverb (place/time)", sub: isUrdu ? "یہاں، کل، کب"     : "here, yesterday, when",  y: 216 },
+              { label: isUrdu ? "Noun"  : "Noun",               sub: isUrdu ? "شخص، جگہ، چیز"  : "person, place, thing",  y: 36  },
+              { label: isUrdu ? "Pronoun" : "Pronoun",            sub: isUrdu ? "وہ، یہ، تم"      : "he, she, they, it",      y: 96  },
+              { label: isUrdu ? "Adjective"  : "Adjective",          sub: isUrdu ? "بڑا، اچھا، رحیم" : "big, good, merciful",    y: 156 },
+              { label: isUrdu ? "Adverb"  : "Adverb (place/time)", sub: isUrdu ? "یہاں، کل، کب"   : "here, yesterday, when",  y: 216 },
             ].map((item, i) => (
               <g key={`ism-src-${i}`}>
                 <rect x="14" y={item.y} width="156" height="48" rx="8"
                   fill="#085041" stroke="#1d9e75" strokeWidth="0.7"/>
-                <text x="92" y={item.y + 18} textAnchor="middle" dominantBaseline="central"
-                  style={{ fontSize: "13px", fontWeight: "600", fill: "#9fe1cb", fontFamily: "inherit" }}>
+                <text x="92" y={item.y + 10} textAnchor="middle" dominantBaseline="central"
+                  style={{ fontSize: "13px", fontWeight: "600", fill: "#9fe1cb", fontFamily: "'Segoe UI', system-ui, sans-serif" }}>
                   {item.label}
                 </text>
                 <text x="92" y={item.y + 36} textAnchor="middle" dominantBaseline="central"
-                  style={{ fontSize: "11px", fill: "#5dcaa5", fontFamily: "inherit" }}>
+                  style={{ fontSize: "12px", fill: "#5dcaa5", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "'Segoe UI', system-ui, sans-serif" }}>
                   {item.sub}
                 </text>
                 <line x1="170" y1={item.y + 24} x2="190" y2="183"
@@ -403,34 +404,23 @@ style={{ marginBottom: "12px" }}
             {/* ISM target box */}
             <rect x="192" y="108" width="140" height="150" rx="12"
               fill="#085041" stroke="#1d9e75" strokeWidth="1.5"/>
-            <text x="262" y="168" textAnchor="middle"
-              style={{ fontFamily: "'Scheherazade New','Traditional Arabic',serif", fontSize: "38px", fill: "#9fe1cb" }}>
+            <text x="262" y="188" textAnchor="middle"
+              style={{ fontFamily: "'Scheherazade New','Traditional Arabic',serif", fontSize: "56px", fill: "#9fe1cb" }}>
               اِسْم
             </text>
-            <text x="262" y="210" textAnchor="middle"
-              style={{ fontSize: "14px", fontWeight: "700", fill: "#9fe1cb", fontFamily: "inherit" }}>
-              {isUrdu ? "اسم" : "Ism"}
-            </text>
-            <text x="262" y="232" textAnchor="middle"
-              style={{ fontSize: "12px", fill: "#5dcaa5", fontFamily: "inherit" }}>
-              Noun
-            </text>
+            
+            
+            
+            
 
             {/* HARF target box */}
             <rect x="368" y="108" width="140" height="150" rx="12"
               fill="#4a1b0c" stroke="#d85a30" strokeWidth="1.5"/>
-            <text x="438" y="168" textAnchor="middle"
-              style={{ fontFamily: "'Scheherazade New','Traditional Arabic',serif", fontSize: "38px", fill: "#f0997b" }}>
+            <text x="438" y="188" textAnchor="middle"
+              style={{ fontFamily: "'Scheherazade New','Traditional Arabic',serif", fontSize: "56px", fill: "#f0997b" }}>
               حَرْف
             </text>
-            <text x="438" y="210" textAnchor="middle"
-              style={{ fontSize: "14px", fontWeight: "700", fill: "#f0997b", fontFamily: "inherit" }}>
-              {isUrdu ? "حرف" : "Harf"}
-            </text>
-            <text x="438" y="232" textAnchor="middle"
-              style={{ fontSize: "12px", fill: "#d85a30", fontFamily: "inherit" }}>
-              Particle
-            </text>
+            
 
             {/* HARF connector lines */}
             {[36, 96, 156, 216].map((y, i) => (
@@ -442,51 +432,73 @@ style={{ marginBottom: "12px" }}
 
             {/* HARF source boxes (right) */}
             {[
-              { label: isUrdu ? "حرف جر (Preposition)"  : "Preposition",   sub: isUrdu ? "میں، پر، سے"      : "in, on, from, with",      y: 36  },
-              { label: isUrdu ? "حرف عطف (Conjunction)" : "Conjunction",   sub: isUrdu ? "اور، یا، لیکن"    : "and, or, but, so",         y: 96  },
-              { label: isUrdu ? "ال (Article)"           : "Article",       sub: isUrdu ? "ال التعریف"        : "the (ال)",                y: 156 },
-              { label: isUrdu ? "حرف ندا (Interjection)" : "Interjection",  sub: isUrdu ? "اے، یا، بے شک"    : "O! (يَا), indeed (إِنَّ)", y: 216 },
+              { label: isUrdu ? "Preposition"  : "Preposition",   sub: isUrdu ? "میں، پر، سے"   : "in, on, from, with",      y: 36  },
+              { label: isUrdu ? "Conjunction" : "Conjunction",   sub: isUrdu ? "اور، یا، لیکن" : "and, or, but, so",         y: 96  },
+              { label: isUrdu ? "Article"       : "Article",       sub: isUrdu ? "ال التعریف"     : "the (ال)",                y: 156 },
+              { label: isUrdu ? "Interjection" : "Interjection",  sub: isUrdu ? "اے، یا، بے شک" : "O! (يَا), indeed (إِنَّ)", y: 216 },
             ].map((item, i) => (
               <g key={`harf-src-${i}`}>
                 <rect x="530" y={item.y} width="168" height="48" rx="8"
                   fill="#4a1b0c" stroke="#d85a30" strokeWidth="0.7"/>
-                <text x="614" y={item.y + 18} textAnchor="middle" dominantBaseline="central"
-                  style={{ fontSize: "13px", fontWeight: "600", fill: "#f0997b", fontFamily: "inherit" }}>
-                  {item.label}
-                </text>
+                <text x="614" y={item.y + 16} textAnchor="middle" dominantBaseline="central"
+  style={{ fontSize: "13px", fontWeight: "600", fill: "#f0997b" }}>
+  {isUrdu && item.label === "ال" ? (
+    <>
+      <tspan style={{ fontFamily: "'Noto Nastaliq Urdu', serif" }}>ال </tspan>
+      <tspan style={{ fontFamily: "inherit" }}>(The)</tspan>
+    </>
+  ) : (
+    <tspan style={{ fontFamily: "'Segoe UI', system-ui, sans-serif" }}>
+      {item.label}
+    </tspan>
+  )}
+</text>
                 <text x="614" y={item.y + 36} textAnchor="middle" dominantBaseline="central"
-                  style={{ fontSize: "11px", fill: "#d85a30", fontFamily: "inherit" }}>
+                  style={{ fontSize: "11px", fill: "#d85a30", fontFamily: isUrdu ? "'Noto Nastaliq Urdu', serif" : "'Segoe UI', system-ui, sans-serif" }}>
                   {item.sub}
                 </text>
               </g>
             ))}
 
             {/* FI'L source box */}
-            <rect x="266" y="318" width="188" height="48" rx="8"
+            <rect x="266" y="318" width="188" height="80" rx="8"
               fill="#633806" stroke="#ef9f27" strokeWidth="0.7"/>
-            <text x="360" y="336" textAnchor="middle" dominantBaseline="central"
-              style={{ fontSize: "13px", fontWeight: "600", fill: "#fac775", fontFamily: "inherit" }}>
-              {isUrdu ? "فعل (Verb)" : "Verb"}
+            <text x="360" y="350" textAnchor="middle" dominantBaseline="central"
+              style={{ fontSize: "46px", fontWeight: "600", fill: "#fac775", fontFamily: "'Scheherazade New','Traditional Arabic',serif" }}>
+              {isUrdu ? "فِعْل " : "فِعْل"}
             </text>
-            <text x="360" y="354" textAnchor="middle" dominantBaseline="central"
-              style={{ fontSize: "11px", fill: "#ef9f27", fontFamily: "inherit" }}>
-              {isUrdu ? "کرنا، ہونا، جانا" : "run, create, sent, be"}
-            </text>
-            <line x1="360" y1="366" x2="360" y2="396"
+
+            <line x1="360" y1="466" x2="360" y2="396"
               stroke="#ef9f27" strokeWidth="0.8" opacity="0.65"
               markerEnd="url(#posArrow)"/>
 
             {/* FI'L target box */}
-            <rect x="266" y="398" width="188" height="88" rx="12"
+            <rect x="266" y="450" width="188" height="88" rx="12"
               fill="#633806" stroke="#ef9f27" strokeWidth="1.5"/>
-            <text x="360" y="430" textAnchor="middle"
-              style={{ fontFamily: "'Scheherazade New','Traditional Arabic',serif", fontSize: "34px", fill: "#fac775" }}>
-              فِعْل
-            </text>
-            <text x="360" y="468" textAnchor="middle"
-              style={{ fontSize: "14px", fontWeight: "700", fill: "#fac775", fontFamily: "inherit" }}>
-              {isUrdu ? "فعل — Verb" : "Fi'l — Verb"}
-            </text>
+           {isUrdu ? (
+  <>
+    <text x="360" y="495" textAnchor="middle"
+      style={{ fontFamily: "inherit", fontSize: "26px", fill: "#fac775" }}>
+      Verb
+    </text>
+    <text x="360" y="525" textAnchor="middle"
+      style={{ fontSize: "16px", fill: "#ef9f27", fontFamily: "'Noto Nastaliq Urdu', serif" }}>
+      کرنا، ہونا، جانا
+    </text>
+  </>
+) : (
+  <>
+    <text x="360" y="485" textAnchor="middle"
+      style={{ fontFamily: "'Segoe UI', system-ui, sans-serif", fontSize: "26px", fill: "#fac775" }}>
+      Verb
+    </text>
+    <text x="360" y="510" textAnchor="middle"
+      style={{ fontSize: "16px", fill: "#ef9f27", fontFamily: "'Segoe UI', system-ui, sans-serif" }}>
+      run, create, sent, be
+    </text>
+  </>
+)}
+            
 
           </svg>
         </div>
